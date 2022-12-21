@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="AutomaçãoTEL.Views.Wifi"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AutomaçãoTEL.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:models="using:AutomaçãoTEL.ViewModel"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="420" Height="650">
+    <Grid>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Vertical">
+            <TextBlock  Text="Automação WIFI"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"        
+                        Margin="0,0,0,30"
+                        FontSize="28"
+                        />
+        </StackPanel>
+
+        <StackPanel VerticalAlignment="Center" Margin="0,-50,0,0">
+            <ListView x:Name="LvItens" ItemsSource="{x:Bind Controler.Itens}" 
+                HorizontalAlignment="Center" VerticalAlignment="Center" Width="410" Height="410"
+                ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType= "models:Item" >
+                        <CheckBox x:Name="Item" Content="{x:Bind Name}" IsChecked="{x:Bind IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold" Checked="Item_Checked" Unchecked="Item_Unchecked"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <StackPanel VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    Orientation="Vertical">
+            <TextBlock x:Name="TbAto237"
+                        Text="Ensaios do Ato 237"
+                        FontSize="14"
+                        Width="200"
+                        Margin="0,0,0,0"
+                        FontFamily="Consolas"
+                        TextAlignment="Left"
+                        HorizontalAlignment="Left" />
+            <StackPanel VerticalAlignment="Bottom"
+                        HorizontalAlignment="Center" 
+                        Orientation="Horizontal" Margin="0,0,0,0">
+                <ToggleSwitch x:Name="TsItems"
+                    OnContent="Ensaios"
+                    Toggled="TsItems_Toggled"
+                    OffContent="Modulações"
+                    Width="310" 
+                    Height="30" 
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom"
+                    Margin="0,5,5,5"/>
+            </StackPanel>
+            <Button Content="Confirmar"
+                    Name="BtConfirme"
+                    Click="BtConfirme_Click"
+                Width="110"
+                Height="30"
+                Margin="0,5,5,20"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                />
+        </StackPanel>
+
+    </Grid>
+</Page>

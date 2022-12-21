@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="AutomaçãoTEL.Views.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AutomaçãoTEL.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Height="650"
+    Width="420">
+
+    <Grid>
+        <StackPanel x:ConnectionId='2' x:Name="SpIntro">
+            <TextBlock Text="Bem Vindo a Automação de TEL"
+                   VerticalAlignment="Top"
+                   Margin="30"
+                   HorizontalAlignment="Center"
+                   FontSize="20"/>
+            <TextBlock Text="By Matheus Productions"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Center"
+                        FontSize="15"
+                        Margin="115,-30,0,0" />
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Selecione o ip da Maquina que será usada"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="20"/>
+                <TextBlock Text="e o nome que o Ensaio será salvo no Banco"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="20"/>
+                <RelativePanel HorizontalAlignment="Center">
+                    <TextBox x:ConnectionId='3' x:Name="TboxIpConfig" Width="200" Margin="0,20,0,0" Header="Ip do Analisador de Espectro"/>
+                    <Button x:ConnectionId='4' x:Name="BtIpConnect" Content="Conectar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,0"                           RelativePanel.RightOf="TboxIpConfig" RelativePanel.AlignBottomWith="TboxIpConfig"/>
+                    <StackPanel x:ConnectionId='5' x:Name="SpConnect" Orientation="Horizontal" RelativePanel.Below="BtIpConnect">
+                        <TextBlock x:ConnectionId='8' x:Name="TbConnect" Text="Não Conectado" Foreground="Red" FontSize="17" Margin="0,5,0,0"/>
+                        <ProgressRing x:ConnectionId='9' x:Name="ProgRIpConnect" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,5,0,0" RelativePanel.Below="TboxIpConfig" Width="30" Height="30"/>
+                    </StackPanel>
+                    <TextBox x:ConnectionId='6' x:Name="TboxAliasAssay" Header="Nome do Ensaio" Width="200" RelativePanel.Below="SpConnect"/>
+                    <Button x:ConnectionId='7' x:Name="BtSaveAlias" Content="Criar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,0"                           RelativePanel.RightOf="TboxAliasAssay" RelativePanel.AlignBottomWith="TboxAliasAssay"/>
+                </RelativePanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>
+

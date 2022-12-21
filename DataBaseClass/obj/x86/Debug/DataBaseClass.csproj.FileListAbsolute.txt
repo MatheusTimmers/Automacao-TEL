@@ -1,0 +1,66 @@
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\bin\x86\Debug\DataBaseClass.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\bin\x86\Debug\DataBaseClass.pdb
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\bin\x86\Debug\DataBaseClass.pri
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\DataBaseClass.csproj.AssemblyReference.cache
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\DataBaseClass.csproj.CoreCompileInputs.cache
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\DataBaseClass.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\DataBaseClass.pdb
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\priconfig.xml
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\resources.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\pri.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\qualifiers.txt
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\DataBaseClass\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\bin\x86\Debug\DataBaseClass.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\bin\x86\Debug\DataBaseClass.pdb
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\bin\x86\Debug\DataBaseClass.pri
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\DataBaseClass.csproj.AssemblyReference.cache
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\DataBaseClass.csproj.CoreCompileInputs.cache
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\DataBaseClass.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\DataBaseClass.pdb
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\priconfig.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\resources.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\pri.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\qualifiers.txt
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\DataBaseClass\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\bin\x86\Debug\DataBaseClass.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\bin\x86\Debug\DataBaseClass.pdb
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\bin\x86\Debug\DataBaseClass.pri
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\DataBaseClass.csproj.AssemblyReference.cache
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\DataBaseClass.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\DataBaseClass.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\DataBaseClass.pdb
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\priconfig.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\resources.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\pri.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\qualifiers.txt
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt

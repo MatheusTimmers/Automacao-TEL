@@ -1,0 +1,403 @@
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\App.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\MainPage.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.xr.xml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.exe
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\resources.pri
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\AppxManifest.xml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\Core\AppxManifest.xml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\Core\AutomaçãoTEL.exe
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.build.appxrecipe
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\System.Runtime.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.AssemblyReference.cache
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\App.g.i.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\App.g.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.g.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\App.xaml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.xaml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\App.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CoreCompileInputs.cache
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CopyComplete
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.exe
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\ResourceHandlingTask.state
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\priconfig.xml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\resources.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\pri.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\App.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\MainPage.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.xr.xml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.exe
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\resources.pri
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\AppxManifest.xml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\Core\AppxManifest.xml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\Core\AutomaçãoTEL.exe
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.build.appxrecipe
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\System.Runtime.dll
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.AssemblyReference.cache
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\App.g.i.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\App.g.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.g.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\App.xaml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.xaml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\App.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CoreCompileInputs.cache
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CopyComplete
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.exe
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\ResourceHandlingTask.state
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\priconfig.xml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\resources.resfiles
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\pri.resfiles
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\Views\Bluetooth.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\Views\Config.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\Views\Home.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\bin\x86\Debug\Views\Wifi.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.i.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.i.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.i.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.i.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.cs
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xaml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.xaml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.xaml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xaml
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.xbf
+C:\Users\Teste\Documents\GitHub\Automa-oTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Bluetooth.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Config.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Home.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Wifi.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.i.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.i.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.i.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.i.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xaml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.xaml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.xaml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xaml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\Views\RegistrationAccount.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.g.i.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.g.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.xaml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.g.i.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.g.cs
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.xaml
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.xbf
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Login.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\App.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\MainPage.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Login.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\RegistrationAccount.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Bluetooth.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Config.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Home.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Wifi.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.xr.xml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.exe
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\resources.pri
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AppxManifest.xml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Core\AppxManifest.xml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Core\AutomaçãoTEL.exe
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.build.appxrecipe
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\System.Runtime.dll
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.AssemblyReference.cache
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\App.g.i.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\App.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.g.i.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.g.i.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.i.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.i.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.i.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.i.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\App.xaml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.xaml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.xaml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.xaml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xaml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.xaml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.xaml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xaml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\App.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xbf
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CoreCompileInputs.cache
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CopyComplete
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.exe
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\ResourceHandlingTask.state
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\priconfig.xml
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\resources.resfiles
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\pri.resfiles
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\mathe\OneDrive\Documentos\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\bin\x86\Debug\System.Drawing.Common.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\FxResources.System.Drawing.Common.SR.resw
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\resources.en-us.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\AutomaçãoTEL\obj\x86\Debug\resources.en-us.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.AssemblyReference.cache
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\App.g.i.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\App.g.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.g.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.g.i.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.g.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.g.i.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.g.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.i.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.i.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.i.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.i.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\App.xaml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.xaml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.xaml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.xaml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xaml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.xaml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.xaml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xaml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\App.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MainPage.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Login.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Config.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Home.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.exe
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\App.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\MainPage.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Login.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\RegistrationAccount.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Bluetooth.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Config.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Home.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Views\Wifi.xbf
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.xr.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.exe
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\resources.pri
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AppxManifest.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Core\AppxManifest.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Core\AutomaçãoTEL.exe
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.build.appxrecipe
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\System.Runtime.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\System.Drawing.Common.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\DataBaseClass.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\MainSpecAn.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\ConnectLan.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\DataBaseClass.pdb
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\DataBaseClass.pri
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\MainSpecAn.pdb
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\MainSpecAn.pri
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\ConnectLan.pdb
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\bin\x86\Debug\ConnectLan.pri
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CoreCompileInputs.cache
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CopyComplete
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\DataBaseClass.pri.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MainSpecAn.pri.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\ConnectLan.pri.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\ResourceHandlingTask.state
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\FxResources.System.Drawing.Common.SR.resw
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\priconfig.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\resources.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\pri.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\resources.en-us.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\resources.en-us.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\AutomaçãoTEL\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\App.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\MainPage.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Login.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\RegistrationAccount.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Bluetooth.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Config.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Home.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Wifi.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.xr.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.exe
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\resources.pri
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\AppxManifest.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Core\AppxManifest.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Core\AutomaçãoTEL.exe
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.build.appxrecipe
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\System.Runtime.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\System.Drawing.Common.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\DataBaseClass.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\MainSpecAn.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\ConnectLan.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\DataBaseClass.pdb
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\DataBaseClass.pri
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\MainSpecAn.pdb
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\MainSpecAn.pri
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\ConnectLan.pdb
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\ConnectLan.pri
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.AssemblyReference.cache
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\App.g.i.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\App.g.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\MainPage.g.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Login.g.i.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Login.g.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.g.i.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.g.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.i.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.g.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.i.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Config.g.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.i.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Home.g.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.i.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.g.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\XamlTypeInfo.g.cs
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\App.xaml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\MainPage.xaml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Login.xaml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.xaml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xaml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Config.xaml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Home.xaml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xaml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\App.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\MainPage.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Login.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\RegistrationAccount.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Bluetooth.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Config.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Home.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\Views\Wifi.xbf
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\XamlSaveStateFile.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.csproj.CopyComplete
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\DataBaseClass.pri.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\MainSpecAn.pri.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\ConnectLan.pri.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.exe
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\AutomaçãoTEL.pdb
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\ResourceHandlingTask.state
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\FxResources.System.Drawing.Common.SR.resw
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\priconfig.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\resources.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\pri.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\resources.en-us.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\resources.en-us.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\obj\x86\Debug\ProjectArchitectures.txt

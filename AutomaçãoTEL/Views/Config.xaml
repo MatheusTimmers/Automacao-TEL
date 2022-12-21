@@ -1,0 +1,130 @@
+﻿<Page
+    x:Class="AutomaçãoTEL.Views.Config"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="420" Height="650">
+
+    <Grid>
+        <Pivot>
+            <PivotItem Header="Geral">
+                <StackPanel>
+                    <Border x:Name="Border1" Background="#2E2E2E" Height="101" Margin="0,10,0,0" CornerRadius="20" Width="394">
+                        <RelativePanel Margin="10,10,0,0" >
+                            <StackPanel x:Name="Sp1" RelativePanel.RightOf="LRefLev">
+                                <TextBox x:Name="TboxRL" Margin="5" PlaceholderText="Nivel de Referecia" Width="150" Text="{x:Bind ControlerConfig.Configs.RefLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox x:Name="TboxAtt" Margin="5" PlaceholderText="Atenuação" Width="150" Text="{x:Bind ControlerConfig.Configs.Att, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="LdBm1" Text="dBm" RelativePanel.RightOf ="Sp1" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LRefLev" Text="Nivel de Referencia:" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LAtt" Text="Atenuação:" Margin="0,12,10,10" RelativePanel.Below="LRefLev"/>
+                            <TextBlock x:Name="LdBm2" Text="dBm" RelativePanel.RightOf ="Sp1" RelativePanel.Below="LdBm1" Margin="0,12,10,10"/>
+                        </RelativePanel>
+                    </Border>
+                    <Border x:Name="Border2" Background="#2E2E2E" Height="115" Margin="0,10,0,0" CornerRadius="20" Width="394">
+                        <RelativePanel Margin="10,10,0,0">
+                            <CheckBox x:Name="CbPrintI" Content="Prints ativos na frequencia Inicial" Width="250" IsChecked="{x:Bind ControlerConfig.Configs.IsCheckedPrintI, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="CbPrintC" Content="Prints ativos na frequencia Central" Width="255" RelativePanel.Below="CbPrintI" IsChecked="{x:Bind ControlerConfig.Configs.IsCheckedPrintC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="CbPrintF" Content="Prints ativos na frequencia Final" RelativePanel.Below="CbPrintC" Width="250" IsChecked="{x:Bind ControlerConfig.Configs.IsCheckedPrintF, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        </RelativePanel>
+                    </Border>
+                    <Border x:Name="Border3" Background="#2E2E2E" Height="115" Margin="0,10,0,0" CornerRadius="20" Width="394">
+                        <RelativePanel Margin="10,10,0,0">
+                            <CheckBox x:Name="CbFreqI" Content="Ativar Frequencia Inicial" Width="250" IsChecked="{x:Bind ControlerConfig.Configs.IsCheckedFreqI, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="CbFreqC" Content="Ativar Frequencia Central" Width="255" RelativePanel.Below="CbFreqI" IsChecked="{x:Bind ControlerConfig.Configs.IsCheckedFreqC, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <CheckBox x:Name="CbFreqF" Content="Ativar Frequencia Final" RelativePanel.Below="CbFreqC" Width="250" IsChecked="{x:Bind ControlerConfig.Configs.IsCheckedFreqF, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </RelativePanel>
+                    </Border>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="Wifi">
+                <StackPanel>
+                    <ComboBox x:Name="ComboBox"
+                              DisplayMemberPath="ComboBoxHumanReadableOption"
+                              Header="Configuração para tecnologias de largura:"
+                              ItemsSource="{x:Bind ComboBoxOptions}"
+                              SelectedItem="{x:Bind SelectedComboBoxOption, Mode=TwoWay}"
+                              SelectedValuePath="ComboBoxOption" SelectionChanged="ComboBox_SelectionChanged" />
+                    <Border x:Name="Border4" Background="#2E2E2E" Height="142" Margin="0,10,0,0" CornerRadius="20" Width="394">
+                        <RelativePanel Margin="10,10,0,0">
+                            <StackPanel x:Name="Sp2" RelativePanel.RightOf ="LFreqC">
+                                <TextBox x:Name="TboxFreqI" Margin="5" PlaceholderText="Frequencia Inicial" Width="150" Text="{x:Bind ControlerConfig.Configs.WifiConfigs.FreqIWifi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox x:Name="TboxFreqM" Margin="5" PlaceholderText="Frequencia Central" Width="150" Text="{x:Bind ControlerConfig.Configs.WifiConfigs.FreqCWifi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox x:Name="TboxFreqF" Margin="5" PlaceholderText="Frequencia Final" Width="150" Text="{x:Bind ControlerConfig.Configs.WifiConfigs.FreqFWifi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="LMhz1" Text="Mhz" RelativePanel.RightOf ="Sp2" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LFreqI" Text="Frequencia Inicial:" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LMhz2" Text="Mhz" RelativePanel.RightOf ="Sp2" Margin="0,12,10,10" RelativePanel.Below="LMhz1"/>
+                            <TextBlock x:Name="LFreqC" Text="Frequencia Central:" Margin="0,12,10,10" RelativePanel.Below="LFreqI"/>
+                            <TextBlock x:Name="LMhz3" Text="Mhz" RelativePanel.RightOf ="Sp2" RelativePanel.Below="LMhz2" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LFreqF" Text="Frequencia Final:" Margin="0,12,10,10" RelativePanel.Below="LFreqC"/>
+                        </RelativePanel>
+                    </Border>
+                    <Border x:Name="Border5" Background="#2E2E2E" Height="119" Margin="0,10,0,0" CornerRadius="20" Width="394">
+                        <RelativePanel Margin="10,10,0,0">
+                            <StackPanel x:Name="Sp3" RelativePanel.RightOf ="LFreqEspI" Margin="0,15,0,0">
+                                <TextBox x:Name="TboxFreqIEsp" Margin="5" PlaceholderText="Frequencia Inicial" Width="150" Text="{x:Bind ControlerConfig.Configs.WifiConfigs.FreqIEspWifi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox x:Name="TboxFreqFEsp" Margin="5" PlaceholderText="Frequencia Final" Width="150" Text="{x:Bind ControlerConfig.Configs.WifiConfigs.FreqFEspWifi, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="TbEsp" Text="Espurios"/>
+                            <TextBlock x:Name="LFreqEspI" Text="Frequencia Inicial:" Margin="0,28,10,10"/>
+                            <TextBlock x:Name="LFreqEspF" Text="Frequencia Final:" RelativePanel.Below="LFreqEspI" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LMhz4" Text="Mhz" RelativePanel.RightOf ="Sp3" RelativePanel.AlignTopWith="Sp3" Margin="0,28,10,10"/>
+                            <TextBlock x:Name="LMhz5" Text="Mhz" RelativePanel.RightOf ="Sp3" RelativePanel.Below="LMhz4" Margin="0,12,10,10" />
+                        </RelativePanel>
+                    </Border>
+                </StackPanel>
+            </PivotItem>
+            <PivotItem Header="BlueTooth">
+                <StackPanel>
+                    <Border x:Name="Border6" Background="#2E2E2E" Height="142" Margin="0,10,0,0" CornerRadius="20" Width="394">
+                        <RelativePanel Margin="10,10,0,0">
+                            <StackPanel x:Name="Sp4" RelativePanel.RightOf ="LFreqIBT">
+                                <TextBox x:Name="TboxFreqIBT" Margin="5" PlaceholderText="Frequencia Inicial" Width="150" Text="{x:Bind ControlerConfig.Configs.BTConfigs.FreqIBT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox x:Name="TboxFreqMBT" Margin="5" PlaceholderText="Frequencia Central" Width="150" Text="{x:Bind ControlerConfig.Configs.BTConfigs.FreqCBT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox x:Name="TboxFreqFBT" Margin="5" PlaceholderText="Frequencia Final" Width="150" Text="{x:Bind ControlerConfig.Configs.BTConfigs.FreqFBT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="LMhz6" Text="Mhz" RelativePanel.RightOf ="Sp4" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LFreqIBT" Text="Frequencia Inicial:" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LMhz7" Text="Mhz" RelativePanel.RightOf ="Sp4" Margin="0,12,10,10" RelativePanel.Below="LMhz6"/>
+                            <TextBlock x:Name="LFreqMBT" Text="Frequencia Central:" Margin="0,12,10,10" RelativePanel.Below="LFreqIBT"/>
+                            <TextBlock x:Name="LMhz8" Text="Mhz" RelativePanel.RightOf ="Sp4" RelativePanel.Below="LMhz7" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LFreqFBT" Text="Frequencia Final:" Margin="0,12,10,10" RelativePanel.Below="LFreqMBT"/>
+                        </RelativePanel>
+                    </Border>
+                    <Border x:Name="Border7" Background="#2E2E2E" Height="119" Margin="0,10,0,0" CornerRadius="20" Width="394">
+                        <RelativePanel Margin="10,10,0,0">
+                            <StackPanel x:Name="Sp5" RelativePanel.RightOf ="LFreqEspIBT" Margin="0,15,0,0">
+                                <TextBox x:Name="TboxFreqIEspBT" Margin="5" PlaceholderText="Frequencia Inicial" Width="150" Text="{x:Bind ControlerConfig.Configs.BTConfigs.FreqIEspBT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox x:Name="TboxFreqFEspBT" Margin="5" PlaceholderText="Frequencia Final" Width="150" Text="{x:Bind ControlerConfig.Configs.BTConfigs.FreqFEspBT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="TbEspBT" Text="Espurios"/>
+                            <TextBlock x:Name="LFreqEspIBT" Text="Frequencia Inicial:" Margin="0,25,10,10"/>
+                            <TextBlock x:Name="LFreqEspFBT" Text="Frequencia Final:" RelativePanel.Below="LFreqEspIBT" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LMhz9" Text="Mhz" RelativePanel.RightOf ="Sp5" RelativePanel.AlignTopWith="Sp5" Margin="0,25,10,10"/>
+                            <TextBlock x:Name="LMhz10" Text="Mhz" RelativePanel.RightOf ="Sp5" RelativePanel.Below="LMhz9" Margin="0,12,10,10"/>
+                        </RelativePanel>
+                    </Border>
+                    <Border x:Name="Border8" Background="#2E2E2E" Height="164" Margin="0,10,0,0" CornerRadius="20" Width="394">
+                        <RelativePanel Margin="10,10,0,0">
+                            <TextBlock x:Name="LFreqSalto" Text="Frequencias para ensaio numero de canais de salto"/>
+                            <StackPanel x:Name="Sp6" RelativePanel.RightOf ="LFreqSaltoI" Margin="0,20,0,0">
+                                <TextBox x:Name="TboxFreqSaltoI" Margin="5" PlaceholderText="Frequencia Inicial" Width="150"  RelativePanel.Below="TbEsp" Text="{x:Bind ControlerConfig.Configs.BTConfigs.FreqISalto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox x:Name="TboxFreqSaltoM" Margin="5" PlaceholderText="Frequencia Central" Width="150" RelativePanel.Below="TboxFreqSaltoI" Text="{x:Bind ControlerConfig.Configs.BTConfigs.FreqMSalto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <TextBox x:Name="TboxFreqSaltoF" Margin="5" RelativePanel.Below="TboxFreqSaltoM" PlaceholderText="Frequencia Final" Width="150" Text="{x:Bind ControlerConfig.Configs.BTConfigs.FreqFSalto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </StackPanel>
+                            <TextBlock x:Name="LFreqSaltoI" Text="Frequencia Inicial:" Margin="0,25,10,10"/>
+                            <TextBlock x:Name="LFreqSaltoC" Text="Frequencia Central:" RelativePanel.Below="LFreqSaltoI" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LFreqSaltoF" Text="Frequencia Final:" RelativePanel.Below="LFreqSaltoC" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LMhz11" Text="Mhz" RelativePanel.RightOf ="Sp6" RelativePanel.AlignTopWith="Sp6" Margin="0,25,10,10"/>
+                            <TextBlock x:Name="LMhz12" Text="Mhz" RelativePanel.RightOf ="Sp6" RelativePanel.Below="LMhz11" Margin="0,12,10,10"/>
+                            <TextBlock x:Name="LMhz13" Text="Mhz" RelativePanel.RightOf ="Sp6" RelativePanel.Below="LMhz12" Margin="0,12,10,10"/>
+                        </RelativePanel>
+                    </Border>
+                </StackPanel>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</Page>

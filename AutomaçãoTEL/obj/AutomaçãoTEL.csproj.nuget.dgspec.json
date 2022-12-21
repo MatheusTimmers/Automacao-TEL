@@ -1,0 +1,330 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\AutomaçãoTEL\\AutomaçãoTEL.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\AutomaçãoTEL\\AutomaçãoTEL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\AutomaçãoTEL\\AutomaçãoTEL.csproj",
+        "projectName": "AutomaçãoTEL",
+        "projectPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\AutomaçãoTEL\\AutomaçãoTEL.csproj",
+        "packagesPath": "C:\\Users\\Matheus Timmers\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\AutomaçãoTEL\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Matheus Timmers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "uap10.0.17134"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.17134": {
+            "projectReferences": {
+              "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\DataBaseClass\\DataBaseClass.csproj": {
+                "projectPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\DataBaseClass\\DataBaseClass.csproj"
+              },
+              "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\MainSpecAn\\MainSpecAn.csproj": {
+                "projectPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\MainSpecAn\\MainSpecAn.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.17134": {
+          "dependencies": {
+            "FirebirdSql.Data.FirebirdClient": {
+              "target": "Package",
+              "version": "[9.1.0, )"
+            },
+            "Microsoft.NETCore.UniversalWindowsPlatform": {
+              "target": "Package",
+              "version": "[6.2.14, )"
+            },
+            "Microsoft.UI.Xaml": {
+              "target": "Package",
+              "version": "[2.0.181011001, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\ConnectLan\\ConnectLan.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\ConnectLan\\ConnectLan.csproj",
+        "projectName": "ConnectLan",
+        "projectPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\ConnectLan\\ConnectLan.csproj",
+        "packagesPath": "C:\\Users\\Matheus Timmers\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\ConnectLan\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Matheus Timmers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "uap10.0.17134"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.17134": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.17134": {
+          "dependencies": {
+            "Microsoft.NETCore.UniversalWindowsPlatform": {
+              "target": "Package",
+              "version": "[6.2.13, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\DataBaseClass\\DataBaseClass.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\DataBaseClass\\DataBaseClass.csproj",
+        "projectName": "DataBaseClass",
+        "projectPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\DataBaseClass\\DataBaseClass.csproj",
+        "packagesPath": "C:\\Users\\Matheus Timmers\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\DataBaseClass\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Matheus Timmers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "uap10.0.17134"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.17134": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.17134": {
+          "dependencies": {
+            "FirebirdSql.Data.FirebirdClient": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Microsoft.NETCore.UniversalWindowsPlatform": {
+              "target": "Package",
+              "version": "[6.2.13, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    },
+    "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\MainSpecAn\\MainSpecAn.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\MainSpecAn\\MainSpecAn.csproj",
+        "projectName": "MainSpecAn",
+        "projectPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\MainSpecAn\\MainSpecAn.csproj",
+        "packagesPath": "C:\\Users\\Matheus Timmers\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\MainSpecAn\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft SDKs\\UWPNuGetPackages\\"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Matheus Timmers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "uap10.0.17134"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "uap10.0.17134": {
+            "projectReferences": {
+              "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\ConnectLan\\ConnectLan.csproj": {
+                "projectPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\ConnectLan\\ConnectLan.csproj"
+              },
+              "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\DataBaseClass\\DataBaseClass.csproj": {
+                "projectPath": "C:\\Users\\Matheus Timmers\\Documents\\WorkProjects\\AutomacaoTEL-main\\DataBaseClass\\DataBaseClass.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "uap10.0.17134": {
+          "dependencies": {
+            "Microsoft.NETCore.UniversalWindowsPlatform": {
+              "target": "Package",
+              "version": "[6.2.13, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      },
+      "runtimes": {
+        "win10-arm": {
+          "#import": []
+        },
+        "win10-arm-aot": {
+          "#import": []
+        },
+        "win10-arm64-aot": {
+          "#import": []
+        },
+        "win10-x64": {
+          "#import": []
+        },
+        "win10-x64-aot": {
+          "#import": []
+        },
+        "win10-x86": {
+          "#import": []
+        },
+        "win10-x86-aot": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

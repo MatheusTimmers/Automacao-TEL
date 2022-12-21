@@ -1,0 +1,66 @@
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\bin\x86\Debug\ConnectLan.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\bin\x86\Debug\ConnectLan.pdb
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\bin\x86\Debug\ConnectLan.pri
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\ConnectLan.csproj.AssemblyReference.cache
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\ConnectLan.csproj.CoreCompileInputs.cache
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\ConnectLan.dll
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\ConnectLan.pdb
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\priconfig.xml
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\resources.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\pri.resfiles
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\qualifiers.txt
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\10088365\source\repos\AutomaçãoTEL\ConnectLan\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\bin\x86\Debug\ConnectLan.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\bin\x86\Debug\ConnectLan.pdb
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\bin\x86\Debug\ConnectLan.pri
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\ConnectLan.csproj.AssemblyReference.cache
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\ConnectLan.csproj.CoreCompileInputs.cache
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\ConnectLan.dll
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\ConnectLan.pdb
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\priconfig.xml
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\resources.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\pri.resfiles
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\qualifiers.txt
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\ConnectLan\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\bin\x86\Debug\ConnectLan.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\bin\x86\Debug\ConnectLan.pdb
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\bin\x86\Debug\ConnectLan.pri
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\ConnectLan.csproj.AssemblyReference.cache
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\ConnectLan.csproj.CoreCompileInputs.cache
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\ConnectLan.dll
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\ConnectLan.pdb
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\priconfig.xml
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\priconfig.xml.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\unfiltered.layout.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\unfiltered.layout.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\filtered.layout.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\filtered.layout.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\excluded.layout.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\excluded.layout.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\resources.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\resources.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\pri.resfiles
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\pri.resfiles.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\qualifiers.txt
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\qualifiers.txt.intermediate
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt

@@ -1,0 +1,5 @@
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\AutomaçãoTEL.csproj;x86
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\ConnectLan\ConnectLan.csproj;x86
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\DataBaseClass.csproj;x86
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\DataBaseClass.csproj;x86
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\MainSpecAn.csproj;x86
