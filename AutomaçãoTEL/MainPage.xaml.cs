@@ -1,5 +1,7 @@
-﻿using System;
+﻿    using MainSpecAn;
+using System;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Windows.Foundation;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -19,11 +21,13 @@ namespace AutomaçãoTEL
     
     public sealed partial class MainPage : Page
     {
-
+        MainAssay mainAssay = new MainAssay();
 
         public MainPage()
         {
             this.InitializeComponent();
+            mainAssay.IsConnect = false;
+            mainAssay.Ip = "";
 
             ApplicationView.PreferredLaunchViewSize = new Size(420, 650);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
@@ -40,7 +44,7 @@ namespace AutomaçãoTEL
                     break;
                 }
             }
-            ContentFrame.Navigate(typeof(AutomaçãoTEL.Views.Home));
+            ContentFrame.Navigate(typeof(Views.Home), mainAssay, new EntranceNavigationTransitionInfo());
         }
 
         public void ActivateBackButton()
@@ -87,7 +91,7 @@ namespace AutomaçãoTEL
             }
             else
             {
-                ContentFrame.Navigate(view, null, new EntranceNavigationTransitionInfo());
+                ContentFrame.Navigate(view, mainAssay, new EntranceNavigationTransitionInfo());
                 return true;
             }
  
@@ -120,9 +124,6 @@ namespace AutomaçãoTEL
             NavigateToView("Login");
         }
 
-        private void NavView_PaneClosing(muxc.NavigationView sender, muxc.NavigationViewPaneClosingEventArgs args)
-        {
-
-        }
     }
+
 }

@@ -41,7 +41,6 @@
       <RootProperty Name="Content" />
       <RootEvent Name="Loaded" />
       <RootEvent Name="ItemInvoked" />
-      <RootEvent Name="PaneClosing" />
       <RootEvent Name="BackRequested" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
@@ -105,6 +104,7 @@
       <RootProperty Name="Children" />
       <RootProperty Name="Orientation" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PersonPicture">
       <RootProperty Name="Margin" />
@@ -128,6 +128,7 @@
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Text" />
       <RootProperty Name="Header" />
+      <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
       <RootProperty Name="FontSize" />
@@ -189,6 +190,7 @@
       <RootProperty Name="CornerRadius" />
       <RootProperty Name="Width" />
       <RootProperty Name="Child" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Margin" />
@@ -202,6 +204,8 @@
       <RootMethod Name="SetAlignTopWith" />
       <RootMethod Name="GetAlignBottomWith" />
       <RootMethod Name="SetAlignBottomWith" />
+      <RootMethod Name="GetAlignHorizontalCenterWithPanel" />
+      <RootMethod Name="SetAlignHorizontalCenterWithPanel" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="DisplayMemberPath" />
@@ -220,6 +224,10 @@
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="AutomaçãoTEL.Views.Home" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
+      <RootProperty Name="Value" />
+      <RootProperty Name="Margin" />
+    </RootType>
     <RootType FullName="AutomaçãoTEL.Views.Wifi" />
   </Roots.RootTypes>
 </Roots>

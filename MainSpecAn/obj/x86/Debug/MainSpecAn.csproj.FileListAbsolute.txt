@@ -31,6 +31,8 @@ C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\MainSpecAn\obj\x86\Debug\pri
 C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\MainSpecAn\obj\x86\Debug\qualifiers.txt
 C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\MainSpecAn\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\SERVIDOR_TEL\Documents\GitHub\AutomacaoTEL\MainSpecAn\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\obj\x86\Debug\MainSpecAn.csproj.AssemblyReference.cache
+C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\obj\x86\Debug\MainSpecAn.csproj.CoreCompileInputs.cache
 C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\bin\x86\Debug\MainSpecAn.dll
 C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\bin\x86\Debug\MainSpecAn.pdb
 C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\bin\x86\Debug\MainSpecAn.pri
@@ -40,8 +42,6 @@ C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\bin
 C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\bin\x86\Debug\ConnectLan.pri
 C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\bin\x86\Debug\DataBaseClass.pdb
 C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\bin\x86\Debug\DataBaseClass.pri
-C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\obj\x86\Debug\MainSpecAn.csproj.AssemblyReference.cache
-C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\obj\x86\Debug\MainSpecAn.csproj.CoreCompileInputs.cache
 C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\obj\x86\Debug\MainSpecAn.csproj.CopyComplete
 C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\obj\x86\Debug\ConnectLan.pri.xml
 C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\obj\x86\Debug\DataBaseClass.pri.xml

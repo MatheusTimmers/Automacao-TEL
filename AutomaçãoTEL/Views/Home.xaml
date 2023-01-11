@@ -27,7 +27,7 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontSize="20"/>
-                <TextBlock Text="e o nome que o Ensaio será salvo no Banco"
+                <TextBlock Text="e o nome que o Ensaio será salvo"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontSize="20"/>
@@ -38,8 +38,9 @@
                         <TextBlock x:Name="TbConnect" Text="Não Conectado" Foreground="Red" FontSize="17" Margin="0,5,0,0"/>
                         <ProgressRing x:Name="ProgRIpConnect" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,5,0,0" RelativePanel.Below="TboxIpConfig" Width="30" Height="30"/>
                     </StackPanel>
-                    <TextBox x:Name="TboxAliasAssay" Header="Nome do Ensaio" Width="200" RelativePanel.Below="SpConnect"/>
-                    <Button x:Name="BtSaveAlias" Content="Criar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,0" Click="BtSaveAlias_Click" RelativePanel.RightOf="TboxAliasAssay" RelativePanel.AlignBottomWith="TboxAliasAssay"/>
+                    <TextBox x:Name="TboxAlias" Header="Nome do Ensaio" Width="200" RelativePanel.Below="SpConnect" TextChanged="TboxAlias_TextChanged"/>
+                    <TextBlock x:Name="LFolder" Margin="0,20,0,0" Text="Selecionar pasta" Width="200" RelativePanel.Below="TboxAlias"/>
+                    <Button x:Name="BtSaveFolder" Content="Selecionar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0" Click="BtSaveFolder_Click" RelativePanel.Below="LFolder" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
                 </RelativePanel>
             </StackPanel>
         </StackPanel>

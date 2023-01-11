@@ -27,7 +27,7 @@
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontSize="20"/>
-                <TextBlock Text="e o nome que o Ensaio será salvo no Banco"
+                <TextBlock Text="e o nome que o Ensaio será salvo"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    FontSize="20"/>
@@ -35,11 +35,12 @@
                     <TextBox x:ConnectionId='3' x:Name="TboxIpConfig" Width="200" Margin="0,20,0,0" Header="Ip do Analisador de Espectro"/>
                     <Button x:ConnectionId='4' x:Name="BtIpConnect" Content="Conectar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,0"                           RelativePanel.RightOf="TboxIpConfig" RelativePanel.AlignBottomWith="TboxIpConfig"/>
                     <StackPanel x:ConnectionId='5' x:Name="SpConnect" Orientation="Horizontal" RelativePanel.Below="BtIpConnect">
-                        <TextBlock x:ConnectionId='8' x:Name="TbConnect" Text="Não Conectado" Foreground="Red" FontSize="17" Margin="0,5,0,0"/>
-                        <ProgressRing x:ConnectionId='9' x:Name="ProgRIpConnect" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,5,0,0" RelativePanel.Below="TboxIpConfig" Width="30" Height="30"/>
+                        <TextBlock x:ConnectionId='9' x:Name="TbConnect" Text="Não Conectado" Foreground="Red" FontSize="17" Margin="0,5,0,0"/>
+                        <ProgressRing x:ConnectionId='10' x:Name="ProgRIpConnect" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,5,0,0" RelativePanel.Below="TboxIpConfig" Width="30" Height="30"/>
                     </StackPanel>
-                    <TextBox x:ConnectionId='6' x:Name="TboxAliasAssay" Header="Nome do Ensaio" Width="200" RelativePanel.Below="SpConnect"/>
-                    <Button x:ConnectionId='7' x:Name="BtSaveAlias" Content="Criar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10,0,0,0"                           RelativePanel.RightOf="TboxAliasAssay" RelativePanel.AlignBottomWith="TboxAliasAssay"/>
+                    <TextBox x:ConnectionId='6' x:Name="TboxAlias" Header="Nome do Ensaio" Width="200" RelativePanel.Below="SpConnect"                                    />
+                    <TextBlock x:ConnectionId='7' x:Name="LFolder" Margin="0,20,0,0" Text="Selecionar pasta" Width="200" RelativePanel.Below="TboxAlias"/>
+                    <Button x:ConnectionId='8' x:Name="BtSaveFolder" Content="Selecionar" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,10,0,0"                            RelativePanel.Below="LFolder" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
                 </RelativePanel>
             </StackPanel>
         </StackPanel>

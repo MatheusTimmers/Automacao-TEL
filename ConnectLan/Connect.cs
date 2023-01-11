@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Net.Sockets;
 using System.Net;
-using Windows.UI.Core;
-using Windows.UI.Xaml.Documents;
+
 
 namespace ConnectLan
 {
@@ -46,16 +42,58 @@ namespace ConnectLan
 
         public string ReadLine()
         {
+            string line;
             byte[] data = new byte[1024];
             int receivedDataLength = Soket.Receive(data);
-            return Encoding.ASCII.GetString(data, 0, receivedDataLength);
+            line = Encoding.ASCII.GetString(data, 0, receivedDataLength);
+            return line;
+        }
+
+        const int BufferSize = 16 * 1024;
+        [ThreadStatic] static byte[] readBuffer;
+
+        private byte[] Read(int count) 
+        {
+            byte[] buffer = new byte[count];
+            int aux = 0;
+
+            while (aux < count)
+            {
+                aux = Soket.Receive(buffer, aux, count, socketFlags: SocketFlags.None);
+            }
+            
+
+            return buffer;
+        }
+
+        private string ReadString(int count)
+        {
+            return System.Text.Encoding.ASCII.GetString(Read(count));
         }
 
         public byte[] ReadBytes()
         {
-            byte[] data = new byte[1024];
-            int receivedDataLength = Soket.Receive(data);
-            return data;
+            int dataSize;
+            int dataSizeLen;
+            byte[] dataBytes;
+
+            var buff = Read(1);
+
+            if (buff[0] != (byte)'#')
+            {
+                throw new Exception("The Binary Block could not be parsed.");
+            }
+
+            var digits = ReadString(1);
+            dataSizeLen = int.Parse(digits);
+
+            var length = ReadString(dataSizeLen);
+            dataSize = int.Parse(length);
+
+            dataBytes = Read(dataSize);
+
+
+            return dataBytes;
         }
 
         Socket soket = null;

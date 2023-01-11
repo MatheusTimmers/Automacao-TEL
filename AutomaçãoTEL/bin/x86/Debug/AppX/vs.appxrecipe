@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2022-12-21T01:41:25.679</Modified>
+      <Modified>2023-01-10T19:39:00.205</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.exe">
       <PackagePath>entrypoint\AutomaçãoTEL.exe</PackagePath>
-      <Modified>2022-12-21T01:41:24.358</Modified>
+      <Modified>2023-01-10T19:38:57.756</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\.nuget\packages\firebirdsql.data.firebirdclient\9.1.0\lib\netstandard2.0\FirebirdSql.Data.FirebirdClient.dll">
       <PackagePath>FirebirdSql.Data.FirebirdClient.dll</PackagePath>
@@ -60,15 +60,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\DataBaseClass\bin\x86\Debug\DataBaseClass.dll">
       <PackagePath>DataBaseClass.dll</PackagePath>
-      <Modified>2022-12-19T22:17:16.967</Modified>
+      <Modified>2023-01-10T18:30:10.176</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\bin\x86\Debug\MainSpecAn.dll">
       <PackagePath>MainSpecAn.dll</PackagePath>
-      <Modified>2022-12-21T01:31:54.291</Modified>
+      <Modified>2023-01-10T18:52:09.942</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\MainSpecAn\bin\x86\Debug\ConnectLan.dll">
       <PackagePath>ConnectLan.dll</PackagePath>
-      <Modified>2022-12-21T01:31:53.922</Modified>
+      <Modified>2023-01-10T18:30:08.766</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\Assets\labelo.png">
       <PackagePath>Assets\labelo.png</PackagePath>
@@ -118,39 +118,39 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\AutomaçãoTEL.xr.xml">
       <PackagePath>AutomaçãoTEL.xr.xml</PackagePath>
-      <Modified>2022-12-20T19:58:49.392</Modified>
+      <Modified>2023-01-10T00:03:40.984</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2022-12-21T01:41:24.211</Modified>
+      <Modified>2023-01-10T19:38:57.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2022-12-21T01:41:24.211</Modified>
+      <Modified>2023-01-10T19:38:57.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Login.xbf">
       <PackagePath>Views\Login.xbf</PackagePath>
-      <Modified>2022-12-21T01:41:24.211</Modified>
+      <Modified>2023-01-10T19:38:57.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\RegistrationAccount.xbf">
       <PackagePath>Views\RegistrationAccount.xbf</PackagePath>
-      <Modified>2022-12-21T01:41:24.211</Modified>
+      <Modified>2023-01-10T19:38:57.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Bluetooth.xbf">
       <PackagePath>Views\Bluetooth.xbf</PackagePath>
-      <Modified>2022-12-21T01:41:24.212</Modified>
+      <Modified>2023-01-10T19:38:57.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Config.xbf">
       <PackagePath>Views\Config.xbf</PackagePath>
-      <Modified>2022-12-21T01:41:24.209</Modified>
+      <Modified>2023-01-10T19:38:57.381</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Home.xbf">
       <PackagePath>Views\Home.xbf</PackagePath>
-      <Modified>2022-12-21T01:41:24.212</Modified>
+      <Modified>2023-01-10T19:38:57.389</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Views\Wifi.xbf">
       <PackagePath>Views\Wifi.xbf</PackagePath>
-      <Modified>2022-12-21T01:41:24.212</Modified>
+      <Modified>2023-01-10T19:38:57.389</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17134.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -166,11 +166,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2022-12-19T22:17:24.714</Modified>
+      <Modified>2023-01-10T18:34:52.115</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Matheus Timmers\Documents\WorkProjects\AutomacaoTEL-main\AutomaçãoTEL\bin\x86\Debug\Core\AutomaçãoTEL.exe">
       <PackagePath>AutomaçãoTEL.exe</PackagePath>
-      <Modified>2022-12-21T01:41:25.675</Modified>
+      <Modified>2023-01-10T19:39:00.198</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

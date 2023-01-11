@@ -17,6 +17,7 @@
                         Margin="0,0,0,30"
                         FontSize="28"
                         />
+            <TextBlock x:Name="LIp" Text=""/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center" Margin="0,-50,0,0">
@@ -64,6 +65,13 @@
                 VerticalAlignment="Bottom"
                 />
         </StackPanel>
+        <Border x:Name="PanelLoading" Background="#2E2E2E" Margin="30,241,30,253" CornerRadius="20" Visibility="Collapsed">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="341">
+                <TextBlock FontSize="17" Text="Aguarde, ensaios em andamento" Margin="10,-30,0,0"/>
+                <ProgressBar x:Name="PbLoading" Value="0" Margin="30,40,30,0"/>
+                <TextBlock x:Name="TbAssayFinish" FontSize="17" Text="Ensaios Concluídos:" Margin="10,20,0,0"/>
+            </StackPanel>
 
+        </Border>
     </Grid>
 </Page>

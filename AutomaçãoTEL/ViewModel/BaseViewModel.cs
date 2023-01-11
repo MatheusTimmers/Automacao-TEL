@@ -18,7 +18,6 @@ namespace AutomaçãoTEL.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public ApplicationDataContainer localSettings = ApplicationData.Current.LocalSettings;
-        public StorageFolder localFolder = ApplicationData.Current.LocalFolder;
 
         protected void OnPropertyChanged(string propertyName)
         {
@@ -41,6 +40,28 @@ namespace AutomaçãoTEL.ViewModel
                 return property;
             }
             return default;
+        }
+
+        protected string GetPropertyBw<T>(ref T property, [CallerMemberName] string propertyName = "")
+        {
+            switch(property as string)
+            {
+                case "Largura de 1":
+                    return "1";
+                case "Largura de 2":
+                    return "2";
+                case "Largura de 20":
+                    return "20";
+                case "Largura de 40":
+                    return "40";
+                case "Largura de 80":
+                    return "80";
+                case "Largura de 160":
+                    return "160";
+                case null:
+                    return "1";
+            }
+            return "1";
         }
 
         protected void SetPropertyWifi<T>(ref T property, T value, string bw,
@@ -72,14 +93,15 @@ namespace AutomaçãoTEL.ViewModel
             
         }
 
-        protected void SetPropertyBw<T>(ref T property, ref string freqI, ref string freqC, ref string freqF, ref string freqEspI, ref string freqEspF, T value ,[CallerMemberName] string propertyName = "")
+        protected void SetPropertyBw<T>(ref string property, ref string freqI, ref string freqC, ref string freqF, ref string freqEspI, ref string freqEspF, T value ,[CallerMemberName] string propertyName = "")
         {
             try
             {
                 localSettings.CreateContainer(value as string, ApplicationDataCreateDisposition.Always);
-                property = value;
+                property = value as string;
                 if (localSettings.Containers[value as string].Values != null)
                 {
+                    SetPropertyWifi(ref property, value as string ?? " ", value as string, "Bw");
                     SetPropertyWifi(ref freqI, (string)localSettings.Containers[value as string].Values["FreqIWifi"] ?? " ", value as string, "FreqIWifi"); 
                     SetPropertyWifi(ref freqC, (string)localSettings.Containers[value as string].Values["FreqCWifi"] ?? " ", value as string, "FreqCWifi");
                     SetPropertyWifi(ref freqF, (string)localSettings.Containers[value as string].Values["FreqFWifi"] ?? " ", value as string, "FreqFWifi");
@@ -88,6 +110,7 @@ namespace AutomaçãoTEL.ViewModel
                 }
                 else
                 {
+                    SetPropertyWifi(ref property, "", value as string, "Bw");
                     SetPropertyWifi(ref freqI, "", value as string, propertyName);
                     SetPropertyWifi(ref freqC, "", value as string, propertyName);
                     SetPropertyWifi(ref freqF, "", value as string, propertyName);

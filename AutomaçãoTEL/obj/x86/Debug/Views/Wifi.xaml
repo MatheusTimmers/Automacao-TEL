@@ -17,15 +17,16 @@
                         Margin="0,0,0,30"
                         FontSize="28"
                         />
+            <TextBlock x:ConnectionId='10' x:Name="LIp" Text=""/>
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center" Margin="0,-50,0,0">
-            <ListView x:ConnectionId='5' x:Name="LvItens"                                        
+            <ListView x:ConnectionId='8' x:Name="LvItens"                                        
                 HorizontalAlignment="Center" VerticalAlignment="Center" Width="410" Height="410"
                 ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <ListView.ItemTemplate>
                     <DataTemplate                           >
-                        <CheckBox x:ConnectionId='6' x:Name="Item"                                                                                                          FontWeight="Bold"                                                  />
+                        <CheckBox x:ConnectionId='9' x:Name="Item"                                                                                                          FontWeight="Bold"                                                  />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
@@ -33,7 +34,7 @@
         <StackPanel VerticalAlignment="Bottom"
                     HorizontalAlignment="Center"
                     Orientation="Vertical">
-            <TextBlock x:ConnectionId='2' x:Name="TbAto237"
+            <TextBlock x:ConnectionId='5' x:Name="TbAto237"
                         Text="Ensaios do Ato 237"
                         FontSize="14"
                         Width="200"
@@ -44,7 +45,7 @@
             <StackPanel VerticalAlignment="Bottom"
                         HorizontalAlignment="Center" 
                         Orientation="Horizontal" Margin="0,0,0,0">
-                <ToggleSwitch x:ConnectionId='4' x:Name="TsItems"
+                <ToggleSwitch x:ConnectionId='7' x:Name="TsItems"
                     OnContent="Ensaios"
                                              
                     OffContent="Modulações"
@@ -54,7 +55,7 @@
                     VerticalAlignment="Bottom"
                     Margin="0,5,5,5"/>
             </StackPanel>
-            <Button x:ConnectionId='3' Content="Confirmar"
+            <Button x:ConnectionId='6' Content="Confirmar"
                     Name="BtConfirme"
                                             
                 Width="110"
@@ -64,7 +65,14 @@
                 VerticalAlignment="Bottom"
                 />
         </StackPanel>
+        <Border x:ConnectionId='2' x:Name="PanelLoading" Background="#2E2E2E" Margin="30,241,30,253" CornerRadius="20" Visibility="Collapsed">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="341">
+                <TextBlock FontSize="17" Text="Aguarde, ensaios em andamento" Margin="10,-30,0,0"/>
+                <ProgressBar x:ConnectionId='3' x:Name="PbLoading" Value="0" Margin="30,40,30,0"/>
+                <TextBlock x:ConnectionId='4' x:Name="TbAssayFinish" FontSize="17" Text="Ensaios Concluídos:" Margin="10,20,0,0"/>
+            </StackPanel>
 
+        </Border>
     </Grid>
 </Page>
 
