@@ -17,7 +17,6 @@
                              IsBackButtonVisible="Auto"
                              HorizontalAlignment="Stretch"
                              Loaded="NavView_Loaded" ItemInvoked="NavView_ItemInvoked"
-                             PaneClosing="NavView_PaneClosing"
                              PaneDisplayMode="LeftCompact"
                              CompactModeThresholdWidth="1007"
                              BackRequested="NavView_BackRequested"

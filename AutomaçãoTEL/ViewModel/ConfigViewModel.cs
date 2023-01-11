@@ -216,7 +216,7 @@ namespace AutomaçãoTEL.ViewModel
         private string _bw;
         public string Bw
         {
-            get => GetProperty(ref _bw);
+            get => GetPropertyBw(ref _bw);
 
             set
             {

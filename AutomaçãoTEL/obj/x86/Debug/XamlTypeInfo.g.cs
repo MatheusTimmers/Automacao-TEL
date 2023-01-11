@@ -742,6 +742,7 @@ namespace AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo
                 userType = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_49_Wifi;
                 userType.AddMemberName("Controler");
+                userType.AddMemberName("ControlerConfig");
                 userType.AddMemberName("Cache");
                 userType.AddMemberName("CacheFileWifi");
                 userType.AddMemberName("CacheFileModu");
@@ -1309,82 +1310,92 @@ namespace AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo
             var that = (global::AutomaçãoTEL.Views.Wifi)instance;
             that.Controler = (global::AutomaçãoTEL.ViewModel.WifiViewModel)Value;
         }
-        private object get_51_Wifi_Cache(object instance)
+        private object get_51_Wifi_ControlerConfig(object instance)
+        {
+            var that = (global::AutomaçãoTEL.Views.Wifi)instance;
+            return that.ControlerConfig;
+        }
+        private void set_51_Wifi_ControlerConfig(object instance, object Value)
+        {
+            var that = (global::AutomaçãoTEL.Views.Wifi)instance;
+            that.ControlerConfig = (global::AutomaçãoTEL.ViewModel.ConfigViewModel)Value;
+        }
+        private object get_52_Wifi_Cache(object instance)
         {
             var that = (global::AutomaçãoTEL.Views.Wifi)instance;
             return that.Cache;
         }
-        private void set_51_Wifi_Cache(object instance, object Value)
+        private void set_52_Wifi_Cache(object instance, object Value)
         {
             var that = (global::AutomaçãoTEL.Views.Wifi)instance;
             that.Cache = (global::System.Collections.Generic.IList<global::System.String>)Value;
         }
-        private object get_52_Wifi_CacheFileWifi(object instance)
+        private object get_53_Wifi_CacheFileWifi(object instance)
         {
             var that = (global::AutomaçãoTEL.Views.Wifi)instance;
             return that.CacheFileWifi;
         }
-        private void set_52_Wifi_CacheFileWifi(object instance, object Value)
+        private void set_53_Wifi_CacheFileWifi(object instance, object Value)
         {
             var that = (global::AutomaçãoTEL.Views.Wifi)instance;
             that.CacheFileWifi = (global::Windows.Storage.StorageFile)Value;
         }
-        private object get_53_Wifi_CacheFileModu(object instance)
+        private object get_54_Wifi_CacheFileModu(object instance)
         {
             var that = (global::AutomaçãoTEL.Views.Wifi)instance;
             return that.CacheFileModu;
         }
-        private void set_53_Wifi_CacheFileModu(object instance, object Value)
+        private void set_54_Wifi_CacheFileModu(object instance, object Value)
         {
             var that = (global::AutomaçãoTEL.Views.Wifi)instance;
             that.CacheFileModu = (global::Windows.Storage.StorageFile)Value;
         }
-        private object get_54_TreeViewNode_IsExpanded(object instance)
+        private object get_55_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_54_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_55_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_55_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_56_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_55_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_56_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_56_TreeViewNode_Content(object instance)
+        private object get_57_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_56_TreeViewNode_Content(object instance, object Value)
+        private void set_57_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_57_TreeViewNode_Children(object instance)
+        private object get_58_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_58_TreeViewNode_Depth(object instance)
+        private object get_59_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_59_TreeViewNode_HasChildren(object instance)
+        private object get_60_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_60_TreeViewNode_Parent(object instance)
+        private object get_61_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -1740,68 +1751,74 @@ namespace AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo
                 xamlMember.Getter = get_50_Wifi_Controler;
                 xamlMember.Setter = set_50_Wifi_Controler;
                 break;
+            case "AutomaçãoTEL.Views.Wifi.ControlerConfig":
+                userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AutomaçãoTEL.Views.Wifi");
+                xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "ControlerConfig", "AutomaçãoTEL.ViewModel.ConfigViewModel");
+                xamlMember.Getter = get_51_Wifi_ControlerConfig;
+                xamlMember.Setter = set_51_Wifi_ControlerConfig;
+                break;
             case "AutomaçãoTEL.Views.Wifi.Cache":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AutomaçãoTEL.Views.Wifi");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "Cache", "System.Collections.Generic.IList`1<String>");
-                xamlMember.Getter = get_51_Wifi_Cache;
-                xamlMember.Setter = set_51_Wifi_Cache;
+                xamlMember.Getter = get_52_Wifi_Cache;
+                xamlMember.Setter = set_52_Wifi_Cache;
                 break;
             case "AutomaçãoTEL.Views.Wifi.CacheFileWifi":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AutomaçãoTEL.Views.Wifi");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "CacheFileWifi", "Windows.Storage.StorageFile");
-                xamlMember.Getter = get_52_Wifi_CacheFileWifi;
-                xamlMember.Setter = set_52_Wifi_CacheFileWifi;
+                xamlMember.Getter = get_53_Wifi_CacheFileWifi;
+                xamlMember.Setter = set_53_Wifi_CacheFileWifi;
                 break;
             case "AutomaçãoTEL.Views.Wifi.CacheFileModu":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("AutomaçãoTEL.Views.Wifi");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "CacheFileModu", "Windows.Storage.StorageFile");
-                xamlMember.Getter = get_53_Wifi_CacheFileModu;
-                xamlMember.Setter = set_53_Wifi_CacheFileModu;
+                xamlMember.Getter = get_54_Wifi_CacheFileModu;
+                xamlMember.Setter = set_54_Wifi_CacheFileModu;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_54_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_54_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_55_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_55_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_55_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_55_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Getter = get_56_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_56_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_56_TreeViewNode_Content;
-                xamlMember.Setter = set_56_TreeViewNode_Content;
+                xamlMember.Getter = get_57_TreeViewNode_Content;
+                xamlMember.Setter = set_57_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_57_TreeViewNode_Children;
+                xamlMember.Getter = get_58_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_58_TreeViewNode_Depth;
+                xamlMember.Getter = get_59_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_59_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_60_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
                 userType = (global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
                 xamlMember = new global::AutomaçãoTEL.AutomaçãoTEL_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_60_TreeViewNode_Parent;
+                xamlMember.Getter = get_61_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }

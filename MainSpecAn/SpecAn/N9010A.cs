@@ -6,6 +6,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using ConnectLan;
 using System.Drawing;
+using Windows.Storage;
+using Windows.UI.Xaml.Controls;
+using Windows.System;
+using Windows.Media.Audio;
+using System.Numerics;
 
 namespace MainSpecAn.SpecAn
 {
@@ -28,214 +33,207 @@ namespace MainSpecAn.SpecAn
         }
 
         #region Ensaios
-        internal string AssayLarguraDeBanda(string user, string alias, string valFreq, string ndbDown, string bandwidth, string RefLevel, string Att, bool tPrints)
+        internal async Task AssayLarguraDeBanda(string tech, string user, string modu, string valFreq, string ndbDown, string bandwidth, string RefLevel, string Att, bool tPrints, string alias, StorageFolder folder)
         {
-            try
+            Start();
+            var t = CreateCsv(tech, modu, $"Largura de Banda a {ndbDown}", "N9010A", user, alias, folder);
+            double Span = int.Parse(bandwidth) * 1.5;
+            Bandwidth(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "100", "300", "ON", "MAXH", "POS", "OBW", "99", "-" + ndbDown);
+            Instr.WriteLine("INIT");
+            Thread.Sleep(15000);
+            Instr.WriteLine("INIT:CONT OFF");
+            Instr.WriteLine("FETC:OBW:XDB?");
+            double aux = Convert.ToDouble(Instr.ReadLine().Replace(".", ","));
+            aux /= 1000;
+            string val = Convert.ToString(aux);
+            var folderFile = await t;
+            await SaveValueCSV(folderFile, $"Largura de Banda a {ndbDown}", valFreq, val);
+            if (tPrints)
+            {
+                await SaveFolderImage($"Largura de Banda a {ndbDown}", valFreq, GetPrint(), folderFile);
+            }
+        }
+
+        internal async Task AssayPicoDaDensidadeDePotencia(string tech, string modu, string user, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints, string alias, StorageFolder folder)
+        {
+            Start();
+            var t = CreateCsv(tech, modu, $"PicoDaDensidadeDePotencia", "N9010A", user, alias, folder);
+            double Span = int.Parse(largura_Banda) * 1.5;
+            ConfiguraInstr(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "3", "10", "ON", "MAXH", "POS", "SAN");
+            Instr.WriteLine("INIT");
+            Thread.Sleep(15000);
+            List<string> val = GetMarker();
+            var folderFile = await t;
+            await SaveValueCSV(folderFile, $"PicoDaDensidadeDePotencia", valFreq, val[0]);
+            if (tPrints)
+            {
+                await SaveFolderImage($"PicoDaDensidadeDePotencia",valFreq,  GetPrint(), folderFile);
+            }
+        }
+
+        internal async Task AssayValorMedioDensidadeEspectral(string tech, string user, string modu, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints, string alias, StorageFolder folder)
+        {
+            Start();
+            var t = CreateCsv(tech, modu, $"ValorMedioDensidadeEspectral", "N9010A", user, alias, folder);
+            double Span = int.Parse(largura_Banda) * 1.5;
+            ConfiguraInstr(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "3", "10", "ON", "AVER", "RMS", "SAN");
+            Instr.WriteLine("INIT");
+            Instr.WriteLine("SWE:TIME?");
+            double tempo = Convert.ToDouble(Instr.ReadLine().Replace(".", ","));
+            Thread.Sleep(10000);
+            Thread.Sleep((int)tempo * 1000);
+            List<string> val = GetMarker();
+            var folderFile = await t;
+            await SaveValueCSV(folderFile, $"ValorMedioDensidadeEspectral", valFreq, val[0]);
+            if (tPrints)
+            {
+                await SaveFolderImage($"ValorMedioDensidadeEspectral", valFreq, GetPrint(), folderFile);
+            }
+        }
+
+        internal async Task AssayPotenciaDePicoMaxima(string tech, string user, string modu, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints, string alias, StorageFolder folder)
+        {
+            Start();
+            var t = CreateCsv(tech, modu, $"PotenciaDePicoMaxima", "N9010A", user, alias, folder);
+            double Span = int.Parse(largura_Banda) * 1.5;
+            ChannelPower(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "1000", "3000", "ON", "MAXH", "POS", "CHP", largura_Banda);
+            Instr.WriteLine("INIT");
+            Thread.Sleep(15000);
+            Instr.WriteLine("INIT:CONT OFF");
+            Instr.WriteLine("FETC:CHP:CHP?");
+            string val = Instr.ReadLine();
+            var folderFile = await t;
+            await SaveValueCSV(folderFile, $"PotenciaDePicoMaxima", valFreq, val);
+            if (tPrints)
+            {
+                await SaveFolderImage($"PotenciaDePicoMaxima", valFreq, GetPrint(), folderFile);
+            }
+
+        }
+
+        internal async Task AssayValorMedioDaPotenciaMaximaDeSaida(string tech, string user, string modu, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints, string alias, StorageFolder folder)
+        {
+            Start();
+            var t = CreateCsv(tech, modu, $"ValorMedioDaPotenciaMaximaDeSaida", "N9010A", user, alias, folder);
+            double Span = int.Parse(largura_Banda) * 1.5;
+            ChannelPower(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "1000", "3000", "ON", "MAXH", "RMS", "CHP", largura_Banda);
+            Instr.WriteLine("INIT");
+            Thread.Sleep(15000);
+            Instr.WriteLine("INIT:CONT OFF");
+            Instr.WriteLine("FETC:CHP:CHP?");
+            double aux = Convert.ToDouble(Instr.ReadLine().Replace(".", ","));
+            aux /= 1000;
+            string val = Convert.ToString(aux);
+            var folderFile = await t;
+            await SaveValueCSV(folderFile, $"ValorMedioDaPotenciaMaximaDeSaida", valFreq, val);
+            if (tPrints)
+            {
+                await SaveFolderImage($"ValorMedioDaPotenciaMaximaDeSaida", valFreq, GetPrint(), folderFile);
+            }
+        }
+
+        public async Task AssayPotenciaDeSaida(string tech, string user, string modu, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints, string alias, StorageFolder folder)
+        {
+            Start();
+            double Span = int.Parse(largura_Banda) * 1.5;
+            var t = CreateCsv(tech, modu, $"PotenciaDeSaida", "N9010A", user, alias, folder);
+            Bandwidth(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "100", "300", "ON", "MAXH", "POS", "OBW", "99", "-26");
+            Instr.WriteLine("INIT");
+            Thread.Sleep(15000);
+            Instr.WriteLine("INIT:CONT OFF");
+            Instr.WriteLine("FETC:OBW:XDB?");
+            double aux = Convert.ToDouble(Instr.ReadLine().Replace(".", ","));
+            aux /= 1000000;
+            string aux1 = Convert.ToString(aux);
+            ChannelPower(valFreq, "DBM", Att, RefLevel, Span.ToString(), "1000", "3000", "ON", "AVER", "RMS", "CHP", aux1);
+            Instr.WriteLine("INIT");
+            Thread.Sleep(15000);
+            Instr.WriteLine("INIT:CONT OFF");
+            Instr.WriteLine("FETC:CHP:CHP?");
+            double aux2 = Convert.ToDouble(Instr.ReadLine().Replace(".", ","));
+            aux2 /= 1000;
+            string val = Convert.ToString(aux2);
+            var folderFile = await t;
+            await SaveValueCSV(folderFile, $"PotenciaDeSaida", valFreq, val);
+            if (tPrints)
+            {
+                await SaveFolderImage($"PotenciaDeSaida", valFreq, GetPrint(), folderFile);
+            }
+        }
+
+        public async Task AssayDensidadeEspectralDePotencia(string tech, string user, string modu, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints, string alias, StorageFolder folder)
+        {
+            Start();
+            var t = CreateCsv(tech, modu, $"DensidadeEspectralDePotencia", "N9010A", user, alias, folder);
+            double Span = int.Parse(largura_Banda) * 1.5;
+            ConfiguraInstr(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "1000", "3000", "ON", "AVER", "RMS", "SAN");
+            Instr.WriteLine("SWE:TIME?");
+            double tempo = Convert.ToDouble(Instr.ReadLine().Replace(".", ","));
+            Thread.Sleep(15000);
+            Thread.Sleep((int)tempo * 1000);
+            var folderFile = await t;
+            //await SaveValueCSV(folderFile, $"DensidadeEspectralDePotencia", valFreq);
+            if (tPrints)
+            {
+                await SaveFolderImage($"DensidadeEspectralDePotencia", valFreq, GetPrint(), folderFile);
+            }
+
+        }
+
+        internal async Task AssayEspurios(string tech, string user, string modu, string[] freq, string RefLevel, string Att)
+        {
+            Start();
+            //var t = CreateCsv(tech, modu, $"Espurios", "N9010A", user, alias, folder);
+            ConfiguraInstrSalto(freq[0], freq[1], "Dbm", Att, RefLevel, "100", "300", "ON", "MAXH", "POS", "SAN");
+            Instr.WriteLine("INIT"); // Comece a varredura
+            Thread.Sleep(5000);
+            //var folderFile = await t;
+            //SaveDbImage(modu, "Espurios", GetPrint(), "N9010A", user);
+
+        }
+
+
+        internal async Task AssaySeparacaoCanaisDeSalto(string tech, string user, string modu, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints, string alias, StorageFolder folder)
+        {
+            Start();
+            double Span = int.Parse(largura_Banda) * 1.5;
+            var t = CreateCsv(tech, modu, $"SeparacaoCanaisDeSalto", "N9010A", user, alias, folder);
+            while (await WaitUser() == ContentDialogResult.Primary)
             {
                 Start();
-                double Span = int.Parse(bandwidth) * 1.5;
-                Bandwidth(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "100", "300", "ON", "MAXH", "POS", "OBW", "99", "-" + ndbDown);
+                ConfiguraInstr(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "100", "300", "ON", "MAXH", "POS", "SAN");
                 Instr.WriteLine("INIT");
-                Thread.Sleep(15000);
                 Instr.WriteLine("INIT:CONT OFF");
-                Instr.WriteLine("FETC:OBW:XDB?");
-                double aux = Convert.ToDouble(Instr.ReadLine());
-                aux /= 1000;
-                string val = Convert.ToString(aux);
-                SaveDb(alias, valFreq, val, $"Largura de Banda a {ndbDown}", "N9010A", user);
-                if (tPrints)
-                {
-                    SaveDbImage(alias, $"Largura de Banda a {ndbDown}", GetPrint(), "N9010A", user);
-                }
-                return "Ok";
-
+                Thread.Sleep(2000);
             }
-            catch (Exception e)
+            List<string> val = GetMarker(2);
+            string result = Convert.ToString(Math.Abs(Convert.ToInt32(val[0]) - Convert.ToInt32(val[1]))); 
+            var folderFile = await t;
+            await SaveValueCSV(folderFile, $"SeparacaoCanaisDeSalto", valFreq, result);
+            if (tPrints)
             {
-                return e.Message;
+                await SaveFolderImage($"SeparacaoCanaisDeSalto", valFreq, GetPrint(), folderFile);
             }
+            return;
         }
 
-        internal string AssayPicoDaDensidadeDePotencia(string alias, string user, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints)
-        {
-            try
-            {
-                Start();
-                double Span = int.Parse(largura_Banda) * 1.5;
-                ConfiguraInstr(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "3", "10", "ON", "MAXH", "POS", "SAN");
-                Instr.WriteLine("INIT");
-                Thread.Sleep(15000);
-                string val = GetMarker();
-                SaveDb(alias, valFreq, val, $"PicoDaDensidadeDePotencia", "N9010A", user);
-                if (tPrints)
-                {
-                    SaveDbImage(alias, "PicoDaDensidadeDePotencia", GetPrint(), "N9010A", user);
-                }
-                return "Ok";
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
-        }
 
-        internal string AssayValorMedioDensidadeEspectral(string user, string alias, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints)
-        {
-            try
-            {
-                Start();
-                double Span = int.Parse(largura_Banda) * 1.5;
-                ConfiguraInstr(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "3", "10", "ON", "AVER", "RMS", "SAN");
-                Instr.WriteLine("INIT");
-                Instr.WriteLine("SWE:TIME?");
-                double tempo = Convert.ToDouble(Instr.ReadLine());
-                Thread.Sleep(10000);
-                Thread.Sleep((int)tempo * 1000);
-                string val = GetMarker();
-                SaveDb(alias, valFreq, val, $"ValorMedioDensidadeEspectral", "N9010A", user);
-                if (tPrints)
-                {
-                    SaveDbImage(alias, "ValorMedioDensidadeEspectral", GetPrint(), "N9010A", user);
-                }
-                return "Ok";
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
-        }
 
-        internal string AssayPotenciaDePicoMaxima(string user, string alias, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints)
-        {
-            try
-            {
-                Start();
-                double Span = int.Parse(largura_Banda) * 1.5;
-                ChannelPower(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "1000", "3000", "ON", "MAXH", "POS", "CHP", largura_Banda);
-                Instr.WriteLine("INIT");
-                Thread.Sleep(15000);
-                Instr.WriteLine("INIT:CONT OFF");
-                Instr.WriteLine("FETC:CHP:CHP?");
-                string val = Instr.ReadLine();
-                SaveDb(alias, valFreq, val, $"PotenciaDePicoMaxima", "N9010A", user);
-                if (tPrints)
-                {
-                    SaveDbImage(alias, "PotenciaDePicoMaxima", GetPrint(), "N9010A", user);
-                }
-                return "Ok";
 
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
 
-        }
 
-        internal string AssayValorMedioDaPotenciaMaximaDeSaida(string user, string alias, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints)
-        {
-            try
-            {
-                Start();
-                double Span = int.Parse(largura_Banda) * 1.5;
-                ChannelPower(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "1000", "3000", "ON", "MAXH", "RMS", "CHP", largura_Banda);
-                Instr.WriteLine("INIT");
-                Thread.Sleep(15000);
-                Instr.WriteLine("INIT:CONT OFF");
-                Instr.WriteLine("FETC:CHP:CHP?");
-                double aux = Convert.ToDouble(Instr.ReadLine());
-                aux /= 1000;
-                string val = Convert.ToString(aux);
-                SaveDb(alias, valFreq, val, $"ValorMedioDaPotenciaMaximaDeSaida", "N9010A", user);
-                if (tPrints)
-                {
-                    SaveDbImage(alias, "ValorMedioDaPotenciaMaximaDeSaida", GetPrint(),"N9010A", user);
-                }
-                return "Ok";
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
 
-        }
 
-        public string AssayPotenciaDeSaida(string user, string alias, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints)
-        {
-            try
-            {
-                Start();
-                double Span = int.Parse(largura_Banda) * 1.5;
 
-                Bandwidth(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "100", "300", "ON", "MAXH", "POS", "OBW", "99", "-26");
-                Instr.WriteLine("INIT");
-                Thread.Sleep(15000);
-                Instr.WriteLine("INIT:CONT OFF");
-                Instr.WriteLine("FETC:OBW:XDB?");
-                double aux = Convert.ToDouble(Instr.ReadLine());
-                aux /= 1000000;
-                string aux1 = Convert.ToString(aux);
-                ChannelPower(valFreq, "DBM", Att, RefLevel, Span.ToString(), "1000", "3000", "ON", "AVER", "RMS", "CHP", aux1);
-                Instr.WriteLine("INIT");
-                Thread.Sleep(15000);
-                Instr.WriteLine("INIT:CONT OFF");
-                Instr.WriteLine("FETC:CHP:CHP?");
-                double aux2 = Convert.ToDouble(Instr.ReadLine());
-                aux2 /= 1000;
-                string val = Convert.ToString(aux2);
-                SaveDb(alias, valFreq, val, $"PotenciaDeSaida", "N9010A", user);
-                if (tPrints)
-                {
-                    SaveDbImage(alias, "PotenciaDeSaida", GetPrint(), "N9010A", user);
-                }
-                return "Ok";
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
-        }
 
-        public string AssayDensidadeEspectralDePotencia(string user, string alias, string valFreq, string largura_Banda, string RefLevel, string Att, bool tPrints)
-        {
-            try
-            {
-                Start();
-                double Span = int.Parse(largura_Banda) * 1.5;
-                ConfiguraInstr(valFreq, "Dbm", Att, RefLevel, Span.ToString(), "1000", "3000", "ON", "AVER", "RMS", "SAN");
-                Instr.WriteLine("SWE:TIME?");
-                double tempo = Convert.ToDouble(Instr.ReadLine());
-                Thread.Sleep(15000);
-                Thread.Sleep((int)tempo * 1000);
-                SaveDb(alias, valFreq, GetMarker(), $"Pico Da Densidade De Potencia", "N9010A", user);
-                if (tPrints)
-                {
-                    SaveDbImage(alias, "DensidadeEspectralDePotencia", GetPrint(), "N9010A", user);
-                }
-                return "Ok";
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
-        }
 
-        internal string AssayEspurios(string user, string alias, string[] freq, string RefLevel, string Att)
-        {
-            try
-            {
-                Start();
-                ConfiguraInstrSalto(freq[0], freq[1], "Dbm", Att, RefLevel, "100", "300", "ON", "MAXH", "POS", "SAN");
-                Instr.WriteLine("INIT"); // Comece a varredura
-                Thread.Sleep(5000);
-                SaveDbImage(alias, "Espurios", GetPrint(), "N9010A", user);
-                return "Ok";
-            }
-            catch (Exception e)
-            {
-                return e.Message;
-            }
-        }
+
+
+
+
+
+
+
         #endregion
 
 
@@ -312,32 +310,35 @@ namespace MainSpecAn.SpecAn
 
         private byte[] GetPrint()
         {
-            Instr.WriteLine("HCOP:SDUM?");
+            Instr.WriteLine("HCOP:SDUM:DATA?");
             return Instr.ReadBytes();
         }
 
-
-        private string GetMarker()
+        private List<string> GetMarker(int count = 1)
         {
+            List<string> result =  new List<string> { };
             double markerX = 1;
             double markerY = 1;
             double New_markerX = 0;
             double New_markerY = 0;
-            while (markerY != New_markerY && markerX != New_markerX)
+            for(int i= 1; i <= count; i++ )
             {
-                markerX = New_markerX;
-                markerY = New_markerY;
-                Instr.WriteLine("CALC1:MARK1:MAX"); //  Definindo o marker para o Peak search
-                Instr.WriteLine("CALC1:MARK1:X?");
-                New_markerX = Convert.ToDouble(Instr.ReadLine());
-                Instr.WriteLine("CALC1:MARK1:Y?");
-                New_markerY = Convert.ToDouble(Instr.ReadLine());
-                Thread.Sleep(10000);
+                while (markerY != New_markerY && markerX != New_markerX)
+                {
+                    markerX = New_markerX;
+                    markerY = New_markerY;
+                    Instr.WriteLine($"CALC1:MARK{i}:MAX"); //  Definindo o marker para o Peak search
+                    Instr.WriteLine($"CALC1:MARK{i}:X?");
+                    New_markerX = Convert.ToDouble(Instr.ReadLine().Replace(".", ","));
+                    Instr.WriteLine($"CALC1:MARK{i}:Y?");
+                    New_markerY = Convert.ToDouble(Instr.ReadLine().Replace(".", ","));
+                    Thread.Sleep(10000);
+                }
+                result.Add(Convert.ToString(New_markerY));
             }
-            return Convert.ToString(New_markerY);
+            
+            return result;
         }
-
-
 
     }
 }
