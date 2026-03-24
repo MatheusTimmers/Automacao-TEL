@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using System.Threading.Tasks;
 using MainSpecAn.Interfaces;
@@ -6,17 +5,15 @@ using MainSpecAn.Interfaces;
 namespace MainSpecAn.Assays
 {
     /// <summary>
-    /// Valor Médio da Densidade Espectral de Potência
-    /// (Span Analyzer, trace AVER, detector RMS).
-    /// Aguarda varredura completa antes de ler o marker.
+    /// Valor Médio da Potência Máxima de Saída (Channel Power, detector RMS, trace MAXH).
     /// </summary>
-    public class AssayValorMedioDensidadeEspectral
+    public class AssayAverageMaximumOutputPower
     {
-        private const int BaseWaitMs = 10_000;
+        private const int SweepWaitMs = 15_000;
 
         private readonly ISpectrumAnalyzer _instrument;
 
-        public AssayValorMedioDensidadeEspectral(ISpectrumAnalyzer instrument)
+        public AssayAverageMaximumOutputPower(ISpectrumAnalyzer instrument)
         {
             _instrument = instrument;
         }
@@ -36,27 +33,26 @@ namespace MainSpecAn.Assays
                 AttenuationDb      = attDb,
                 ReferenceLevelDbm  = refLevelDbm,
                 SpanMHz            = span.ToString(CultureInfo.InvariantCulture),
-                RbwKHz             = "3",
-                VbwKHz             = "10",
+                RbwKHz             = "1000",
+                VbwKHz             = "3000",
                 AutoSweep          = true,
-                TraceMode          = "AVER",
+                TraceMode          = "MAXH",
                 Detector           = "RMS"
             };
 
             _instrument.Reset();
-            _instrument.ConfigureSpanAnalyzer(config);
+            _instrument.ConfigureChannelPower(config, bandwidthMHz);
             _instrument.InitiateSweep();
 
-            double sweepTimeSec = _instrument.GetSweepTime();
-            int totalWaitMs = BaseWaitMs + (int)(sweepTimeSec * 1_000);
-            await Task.Delay(totalWaitMs);
+            await Task.Delay(SweepWaitMs);
 
-            var markers = _instrument.GetPeakMarkers(1);
-            double value = markers[0];
+            _instrument.SetContinuousSweep(false);
+            double rawValue  = _instrument.FetchChannelPowerResult();
+            double valueKHz  = rawValue / 1_000.0;
 
             byte[] screenshot = captureScreen ? _instrument.CaptureScreen() : null;
 
-            return new AssayResult { Value = value, Unit = "dBm/Hz", Screenshot = screenshot };
+            return new AssayResult { Value = valueKHz, Unit = "kHz", Screenshot = screenshot };
         }
     }
 }

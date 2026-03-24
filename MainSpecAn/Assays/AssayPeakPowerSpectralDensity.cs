@@ -5,32 +5,24 @@ using MainSpecAn.Interfaces;
 namespace MainSpecAn.Assays
 {
     /// <summary>
-    /// Largura de Faixa (OBW) a N dB.
-    /// Norma 14448 Anatel — itens aplicáveis a WIFI e Bluetooth.
+    /// Pico da Densidade de Potência (Span Analyzer, marker de pico, trace MAXH, detector POS).
     /// </summary>
-    public class AssayLarguraDeBanda
+    public class AssayPeakPowerSpectralDensity
     {
         private const int SweepWaitMs = 15_000;
 
         private readonly ISpectrumAnalyzer _instrument;
 
-        public AssayLarguraDeBanda(ISpectrumAnalyzer instrument)
+        public AssayPeakPowerSpectralDensity(ISpectrumAnalyzer instrument)
         {
             _instrument = instrument;
         }
 
-        /// <param name="centerFreqMHz">Frequência central em MHz.</param>
-        /// <param name="bandwidthMHz">Largura de banda nominal em MHz (span = 1.5x).</param>
-        /// <param name="refLevelDbm">Nível de referência em dBm.</param>
-        /// <param name="attDb">Atenuação em dB.</param>
-        /// <param name="xDbDown">Ex: "6", "20", "26" — dB abaixo do pico.</param>
-        /// <param name="captureScreen">Capturar tela do instrumento ao final.</param>
         public async Task<AssayResult> ExecuteAsync(
             string centerFreqMHz,
             string bandwidthMHz,
             string refLevelDbm,
             string attDb,
-            string xDbDown,
             bool   captureScreen)
         {
             double span = double.Parse(bandwidthMHz, CultureInfo.InvariantCulture) * 1.5;
@@ -41,26 +33,25 @@ namespace MainSpecAn.Assays
                 AttenuationDb      = attDb,
                 ReferenceLevelDbm  = refLevelDbm,
                 SpanMHz            = span.ToString(CultureInfo.InvariantCulture),
-                RbwKHz             = "100",
-                VbwKHz             = "300",
+                RbwKHz             = "3",
+                VbwKHz             = "10",
                 AutoSweep          = true,
                 TraceMode          = "MAXH",
                 Detector           = "POS"
             };
 
             _instrument.Reset();
-            _instrument.ConfigureOBW(config, "99", "-" + xDbDown);
+            _instrument.ConfigureSpanAnalyzer(config);
             _instrument.InitiateSweep();
 
             await Task.Delay(SweepWaitMs);
 
-            _instrument.SetContinuousSweep(false);
-            double valueHz  = _instrument.FetchOBWResult();
-            double valueKHz = valueHz / 1_000.0;
+            var markers = _instrument.GetPeakMarkers(1);
+            double value = markers[0];
 
             byte[] screenshot = captureScreen ? _instrument.CaptureScreen() : null;
 
-            return new AssayResult { Value = valueKHz, Unit = "kHz", Screenshot = screenshot };
+            return new AssayResult { Value = value, Unit = "dBm/Hz", Screenshot = screenshot };
         }
     }
 }

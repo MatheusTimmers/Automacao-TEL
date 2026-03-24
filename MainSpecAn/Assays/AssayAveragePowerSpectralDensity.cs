@@ -6,16 +6,17 @@ using MainSpecAn.Interfaces;
 namespace MainSpecAn.Assays
 {
     /// <summary>
-    /// Densidade Espectral de Potência (Span Analyzer, AVER, RMS).
-    /// Ensaio visual — captura apenas a tela, sem valor numérico.
+    /// Valor Médio da Densidade Espectral de Potência
+    /// (Span Analyzer, trace AVER, detector RMS).
+    /// Aguarda varredura completa antes de ler o marker.
     /// </summary>
-    public class AssayDensidadeEspectralDePotencia
+    public class AssayAveragePowerSpectralDensity
     {
-        private const int BaseWaitMs = 15_000;
+        private const int BaseWaitMs = 10_000;
 
         private readonly ISpectrumAnalyzer _instrument;
 
-        public AssayDensidadeEspectralDePotencia(ISpectrumAnalyzer instrument)
+        public AssayAveragePowerSpectralDensity(ISpectrumAnalyzer instrument)
         {
             _instrument = instrument;
         }
@@ -35,8 +36,8 @@ namespace MainSpecAn.Assays
                 AttenuationDb      = attDb,
                 ReferenceLevelDbm  = refLevelDbm,
                 SpanMHz            = span.ToString(CultureInfo.InvariantCulture),
-                RbwKHz             = "1000",
-                VbwKHz             = "3000",
+                RbwKHz             = "3",
+                VbwKHz             = "10",
                 AutoSweep          = true,
                 TraceMode          = "AVER",
                 Detector           = "RMS"
@@ -50,10 +51,12 @@ namespace MainSpecAn.Assays
             int totalWaitMs = BaseWaitMs + (int)(sweepTimeSec * 1_000);
             await Task.Delay(totalWaitMs);
 
+            var markers = _instrument.GetPeakMarkers(1);
+            double value = markers[0];
+
             byte[] screenshot = captureScreen ? _instrument.CaptureScreen() : null;
 
-            // Ensaio visual — sem valor numérico
-            return new AssayResult { Value = null, Unit = null, Screenshot = screenshot };
+            return new AssayResult { Value = value, Unit = "dBm/Hz", Screenshot = screenshot };
         }
     }
 }

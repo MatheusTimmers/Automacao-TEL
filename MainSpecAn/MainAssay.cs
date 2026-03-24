@@ -23,19 +23,20 @@ namespace MainSpecAn
         private static readonly Dictionary<string, string> TableNameMap =
             new Dictionary<string, string>
             {
-                ["Occupied Bandwidth at -6 dB"]        = "OccupiedBandwidth6dB",
-                ["Occupied Bandwidth at -26 dB"]       = "OccupiedBandwidth26dB",
-                ["Occupied Bandwidth at -20 dB"]       = "OccupiedBandwidth20dB",
-                ["Maximum Peak Power"]                 = "MaximumPeakPower",
-                ["Average Maximum Output Power"]       = "AverageMaximumOutputPower",
-                ["Peak Power Spectral Density"]        = "PeakPowerSpectralDensity",
-                ["Average Power Spectral Density"]     = "AveragePowerSpectralDensity",
-                ["Out-of-Band Emissions"]              = "OutOfBandEmissions",
-                ["Output Power"]                       = "OutputPower",
-                ["Power Spectral Density"]             = "PowerSpectralDensity",
-                ["Hopping Channel Separation"]         = "HoppingChannelSeparation",
-                ["Number of Occupations"]              = "NumberOfOccupations",
-                ["Occupation Time"]                    = "OccupationTime",
+                ["Largura de Faixa a 6 dB"]                          = "OccupiedBandwidth6dB",
+                ["Largura de Faixa a 26 dB"]                         = "OccupiedBandwidth26dB",
+                ["Largura de Faixa a 20 db"]                         = "OccupiedBandwidth20dB",
+                ["Potência de Pico Máxima"]                          = "MaximumPeakPower",
+                ["Valor Médio da Potência máxima de Saida"]          = "AverageMaximumOutputPower",
+                ["Pico da Densidade de Potência"]                    = "PeakPowerSpectralDensity",
+                ["Valor Médio da Densidade Espectral de Potência"]   = "AveragePowerSpectralDensity",
+                ["Emissão fora de faixa"]                            = "OutOfBandEmissions",
+                ["Emissão Fora da Faixa"]                            = "OutOfBandEmissions",
+                ["Potência de Saída"]                                = "OutputPower",
+                ["Densidade Espectral de Potência"]                  = "PowerSpectralDensity",
+                ["Separação de Canais de Salto"]                     = "HoppingChannelSeparation",
+                ["Numero de Ocupações"]                              = "NumberOfOccupations",
+                ["Tempo de Ocupação"]                                = "OccupationTime",
             };
 
         public AssayRunner(TestSession session)
@@ -65,49 +66,49 @@ namespace MainSpecAn
 
             switch (nameAssay)
             {
-                case "Occupied Bandwidth at -6 dB":
-                    result = await new AssayLarguraDeBanda(instrument)
+                case "Largura de Faixa a 6 dB":
+                    result = await new AssayOccupiedBandwidth(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, "6", tPrints);
                     break;
 
-                case "Occupied Bandwidth at -26 dB":
-                    result = await new AssayLarguraDeBanda(instrument)
+                case "Largura de Faixa a 26 dB":
+                    result = await new AssayOccupiedBandwidth(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, "26", tPrints);
                     break;
 
-                case "Maximum Peak Power":
-                    result = await new AssayPotenciaDePicoMaxima(instrument)
+                case "Potência de Pico Máxima":
+                    result = await new AssayMaximumPeakPower(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Average Maximum Output Power":
-                    result = await new AssayValorMedioPotenciaMaxima(instrument)
+                case "Valor Médio da Potência máxima de Saida":
+                    result = await new AssayAverageMaximumOutputPower(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Peak Power Spectral Density":
-                    result = await new AssayPicoDensidadePotencia(instrument)
+                case "Pico da Densidade de Potência":
+                    result = await new AssayPeakPowerSpectralDensity(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Average Power Spectral Density":
-                    result = await new AssayValorMedioDensidadeEspectral(instrument)
+                case "Valor Médio da Densidade Espectral de Potência":
+                    result = await new AssayAveragePowerSpectralDensity(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Output Power":
-                    result = await new AssayPotenciaDeSaida(instrument)
+                case "Potência de Saída":
+                    result = await new AssayOutputPower(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Power Spectral Density":
-                    result = await new AssayDensidadeEspectralDePotencia(instrument)
+                case "Densidade Espectral de Potência":
+                    result = await new AssayPowerSpectralDensity(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Out-of-Band Emissions":
-                    // TODO: implement AssayOutOfBandEmissions
-                    progress?.Report("Out-of-Band Emissions not yet implemented.");
+                case "Emissão fora de faixa":
+                    // TODO: implementar AssayEmissaoForaDeFaixa
+                    progress?.Report("Emissão fora de faixa: não implementado.");
                     return;
 
                 default:
@@ -140,34 +141,34 @@ namespace MainSpecAn
 
             switch (nameAssay)
             {
-                case "Occupied Bandwidth at -20 dB":
-                    result = await new AssayLarguraDeBanda(instrument)
+                case "Largura de Faixa a 20 db":
+                    result = await new AssayOccupiedBandwidth(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, "20", tPrints);
                     break;
 
-                case "Maximum Peak Power":
-                    result = await new AssayPotenciaDePicoMaxima(instrument)
+                case "Potência de Pico Máxima":
+                    result = await new AssayMaximumPeakPower(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Peak Power Spectral Density":
-                    result = await new AssayPicoDensidadePotencia(instrument)
+                case "Pico da Densidade de Potência":
+                    result = await new AssayPeakPowerSpectralDensity(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Number of Occupations":
-                    result = await new AssayValorMedioPotenciaMaxima(instrument)
+                case "Numero de Ocupações":
+                    result = await new AssayAverageMaximumOutputPower(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Occupation Time":
-                    result = await new AssayValorMedioDensidadeEspectral(instrument)
+                case "Tempo de Ocupação":
+                    result = await new AssayAveragePowerSpectralDensity(instrument)
                         .ExecuteAsync(valFreq, bandwidth, refLevel, att, tPrints);
                     break;
 
-                case "Out-of-Band Emissions":
-                    // TODO: implement AssayOutOfBandEmissions
-                    progress?.Report("Out-of-Band Emissions not yet implemented.");
+                case "Emissão Fora da Faixa":
+                    // TODO: implementar AssayEmissaoForaDeFaixa
+                    progress?.Report("Emissão Fora da Faixa: não implementado.");
                     return;
 
                 default:

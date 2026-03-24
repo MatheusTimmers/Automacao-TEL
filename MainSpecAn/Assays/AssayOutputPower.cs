@@ -10,13 +10,13 @@ namespace MainSpecAn.Assays
     /// 1. Mede OBW a -26 dB para obter a largura de banda real.
     /// 2. Usa esse valor como integration bandwidth no Channel Power (AVER, RMS).
     /// </summary>
-    public class AssayPotenciaDeSaida
+    public class AssayOutputPower
     {
         private const int SweepWaitMs = 15_000;
 
         private readonly ISpectrumAnalyzer _instrument;
 
-        public AssayPotenciaDeSaida(ISpectrumAnalyzer instrument)
+        public AssayOutputPower(ISpectrumAnalyzer instrument)
         {
             _instrument = instrument;
         }

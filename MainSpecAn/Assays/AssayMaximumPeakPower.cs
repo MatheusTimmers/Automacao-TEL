@@ -5,15 +5,15 @@ using MainSpecAn.Interfaces;
 namespace MainSpecAn.Assays
 {
     /// <summary>
-    /// Valor Médio da Potência Máxima de Saída (Channel Power, detector RMS, trace MAXH).
+    /// Potência de Pico Máxima (Channel Power, detector POS, trace MAXH).
     /// </summary>
-    public class AssayValorMedioPotenciaMaxima
+    public class AssayMaximumPeakPower
     {
         private const int SweepWaitMs = 15_000;
 
         private readonly ISpectrumAnalyzer _instrument;
 
-        public AssayValorMedioPotenciaMaxima(ISpectrumAnalyzer instrument)
+        public AssayMaximumPeakPower(ISpectrumAnalyzer instrument)
         {
             _instrument = instrument;
         }
@@ -37,7 +37,7 @@ namespace MainSpecAn.Assays
                 VbwKHz             = "3000",
                 AutoSweep          = true,
                 TraceMode          = "MAXH",
-                Detector           = "RMS"
+                Detector           = "POS"
             };
 
             _instrument.Reset();
@@ -47,12 +47,11 @@ namespace MainSpecAn.Assays
             await Task.Delay(SweepWaitMs);
 
             _instrument.SetContinuousSweep(false);
-            double rawValue  = _instrument.FetchChannelPowerResult();
-            double valueKHz  = rawValue / 1_000.0;
+            double value = _instrument.FetchChannelPowerResult();
 
             byte[] screenshot = captureScreen ? _instrument.CaptureScreen() : null;
 
-            return new AssayResult { Value = valueKHz, Unit = "kHz", Screenshot = screenshot };
+            return new AssayResult { Value = value, Unit = "dBm", Screenshot = screenshot };
         }
     }
 }

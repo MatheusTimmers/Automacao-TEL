@@ -13,8 +13,18 @@ namespace AutomaçãoTEL.ViewModel
         public ObservableCollection<Item> Itens { get { return this._itens; } }
         public bool TsItemsIsOn { get; set; }
 
-        readonly List<string> namesAssayBT = new List<string> { "Selecionar Todos", "Largura de Faixa a 20 db", "Potência de Pico Máxima", "Emissão Fora da Faixa", "Separação de Canais de Salto", "Numero de Frequencia de Salto", "Numero de Ocupações", "Tempo de Ocupação" };
-        readonly List<string> namesModulations = new List<string> { "Selecionar Todos", "GFSK", "PI/4 DQPSK", "8DPSK" };
+        readonly List<string> namesAssayBT = new List<string>
+        {
+            "Selecionar Todos",
+            "Largura de Faixa a 20 db",
+            "Potência de Pico Máxima",
+            "Emissão Fora da Faixa",
+            "Separação de Canais de Salto",
+            "Numero de Frequencia de Salto",
+            "Numero de Ocupações",
+            "Tempo de Ocupação"
+        };
+        readonly List<string> namesModulations = new List<string> { "Select All", "GFSK", "PI/4 DQPSK", "8DPSK" };
         public void AttList()
         {
             this.Itens.Clear();
