@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.IO;
@@ -14,7 +14,22 @@ namespace DataBaseClass
 {
     public class DataBaseCommands
     {
-
+        private static readonly HashSet<string> ValidTableNames = new HashSet<string>
+        {
+            "OccupiedBandwidth6dB",
+            "OccupiedBandwidth26dB",
+            "OccupiedBandwidth20dB",
+            "MaximumPeakPower",
+            "AverageMaximumOutputPower",
+            "PeakPowerSpectralDensity",
+            "AveragePowerSpectralDensity",
+            "OutOfBandEmissions",
+            "OutputPower",
+            "PowerSpectralDensity",
+            "HoppingChannelSeparation",
+            "NumberOfOccupations",
+            "OccupationTime",
+        };
 
         private FbConnection CreateConnection()
         {
@@ -26,7 +41,6 @@ namespace DataBaseClass
         }
 
         private FbParameterCollection sqlParameterCollection = new FbCommand().Parameters;
-
 
         public void ClearParameters()
         {
@@ -51,50 +65,38 @@ namespace DataBaseClass
             RequestTable.PrimaryKey = new DataColumn[] { pkOrderID };
         }
 
-
         public void ExecuteCommand(CommandType commandType, string nameStoredProcedureOrTextSql)
         {
             using (FbConnection sqlConnection = CreateConnection())
             {
-
                 if (sqlConnection.State == ConnectionState.Closed)
                     sqlConnection.Open();
-                FbTransaction OrderTrans = sqlConnection.BeginTransaction();
 
-                FbCommand cmd = new FbCommand();
-                cmd.Connection = sqlConnection;
-                cmd.Transaction = OrderTrans;
+                FbTransaction orderTrans = sqlConnection.BeginTransaction();
+                FbCommand cmd = sqlConnection.CreateCommand();
+                cmd.Transaction = orderTrans;
+
                 try
                 {
-                    cmd = sqlConnection.CreateCommand();
-                    cmd.CommandType = commandType;
-                    cmd.CommandText = nameStoredProcedureOrTextSql;
+                    cmd.CommandType    = commandType;
+                    cmd.CommandText    = nameStoredProcedureOrTextSql;
                     cmd.CommandTimeout = 500;
 
-
-
                     foreach (FbParameter sqlParameter in sqlParameterCollection)
-                    {
                         cmd.Parameters.Add(new FbParameter(sqlParameter.ParameterName, sqlParameter.Value));
-                    }
 
-                    OrderTrans.Commit();
-
-                    FbDataAdapter adapter = new FbDataAdapter();
-                    adapter.InsertCommand = cmd;
-
-                    cmd.ExecuteScalar(); ;
-
+                    cmd.ExecuteNonQuery();
+                    orderTrans.Commit();
                 }
                 catch (Exception e)
                 {
-
+                    orderTrans.Rollback();
                     throw new Exception(e.Message);
                 }
                 finally
                 {
                     cmd.Dispose();
-                    OrderTrans.Dispose();
+                    orderTrans.Dispose();
                     sqlConnection.Close();
                 }
             }
@@ -104,60 +106,41 @@ namespace DataBaseClass
         {
             using (FbConnection sqlConnection = CreateConnection())
             {
-
                 if (sqlConnection.State == ConnectionState.Closed)
                     sqlConnection.Open();
-                FbTransaction OrderTrans = sqlConnection.BeginTransaction();
 
-                FbCommand cmd = new FbCommand();
-                cmd.Connection = sqlConnection;
-                cmd.Transaction = OrderTrans;
+                FbTransaction orderTrans = sqlConnection.BeginTransaction();
+                FbCommand cmd = sqlConnection.CreateCommand();
+                cmd.Transaction = orderTrans;
+
                 try
                 {
-
-                    cmd = sqlConnection.CreateCommand();
-                    cmd.CommandType = commandType;
-                    cmd.CommandText = nameStoredProcedureOrTextSql;
+                    cmd.CommandType    = commandType;
+                    cmd.CommandText    = nameStoredProcedureOrTextSql;
                     cmd.CommandTimeout = 500;
 
-
-
-
                     foreach (FbParameter sqlParameter in sqlParameterCollection)
-                    {
                         cmd.Parameters.Add(new FbParameter(sqlParameter.ParameterName, sqlParameter.Value));
-                    }
-
-                    OrderTrans.Commit();
 
                     FbDataAdapter da = new FbDataAdapter(cmd);
                     DataSet ds = new DataSet();
                     da.Fill(ds);
+                    orderTrans.Commit();
 
-
-                    MemoryStream ms = new MemoryStream((byte[])ds.Tables[0].Rows[0]["USERIMAGE"]);
-
-                    return ms;
-
-
-
+                    return new MemoryStream((byte[])ds.Tables[0].Rows[0]["USERIMAGE"]);
                 }
                 catch (Exception e)
                 {
-                    OrderTrans.Rollback();
+                    orderTrans.Rollback();
                     throw new Exception(e.Message);
                 }
                 finally
                 {
                     cmd.Dispose();
-                    OrderTrans.Dispose();
+                    orderTrans.Dispose();
                     sqlConnection.Close();
                 }
-
             }
-
-
-
         }
 
         public DataTable GetTable(FbDataReader reader)
@@ -171,36 +154,30 @@ namespace DataBaseClass
                 {
                     DataColumn col = new DataColumn()
                     {
-                        ColumnName = r["ColumnName"].ToString(),
-                        Unique = Convert.ToBoolean(r["IsUnique"]),
+                        ColumnName  = r["ColumnName"].ToString(),
+                        Unique      = Convert.ToBoolean(r["IsUnique"]),
                         AllowDBNull = Convert.ToBoolean(r["AllowDBNull"]),
-                        ReadOnly = Convert.ToBoolean(r["IsReadOnly"])
-
+                        ReadOnly    = Convert.ToBoolean(r["IsReadOnly"])
                     };
                     tbReturn.Columns.Add(col);
                 }
             }
+
             while (reader.Read())
             {
                 DataRow newRow = tbReturn.NewRow();
                 for (int i = 0; i < tbReturn.Columns.Count; i++)
                 {
-                    if (tbReturn.Columns.Count == 1)
-                    {
-
-                        newRow[i] = (byte[])reader[i];
-                        var a = newRow[i].GetType();
-                        //newRow[i] = reader.GetValue(i) as byte[];
-                    }
-                    else
-                    {
-                        newRow[i] = reader.GetValue(i);
-                    }
-
+                    newRow[i] = tbReturn.Columns.Count == 1
+                        ? (byte[])reader[i]
+                        : reader.GetValue(i);
                 }
                 tbReturn.Rows.Add(newRow);
             }
+
             return tbReturn;
         }
+
+        public static bool IsValidTableName(string name) => ValidTableNames.Contains(name);
     }
 }

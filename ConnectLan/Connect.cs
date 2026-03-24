@@ -1,17 +1,19 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Net.Sockets;
 using System.Net;
-
 
 namespace ConnectLan
 {
     public class Connect
     {
-        private string IpAddr;
-        private int PortNumber;
-        private IPEndPoint ip = null;
-        private int TimeOut;
+        private string IpAddr  = "0.0.0.0";
+        private int PortNumber = 0;
+        private IPEndPoint ip  = null;
+        private int TimeOut    = 1000;
+
+        const int BufferSize = 16 * 1024;
+        [ThreadStatic] static byte[] readBuffer;
 
         public IPEndPoint Ip
         {
@@ -26,13 +28,12 @@ namespace ConnectLan
 
         public Connect(string instrIPAddress, int instrPortNo, int timeOut)
         {
-            IpAddr = instrIPAddress;
+            IpAddr     = instrIPAddress;
             PortNumber = instrPortNo;
-            TimeOut = timeOut;
-            if (!Soket.Connected)
-            {
-                throw new SocketException();
-            }  
+            TimeOut    = timeOut;
+
+            // Aciona conexão de imediato — lança SocketException se inacessível
+            _ = Soket;
         }
 
         public void WriteLine(string command)
@@ -42,58 +43,43 @@ namespace ConnectLan
 
         public string ReadLine()
         {
-            string line;
             byte[] data = new byte[1024];
             int receivedDataLength = Soket.Receive(data);
-            line = Encoding.ASCII.GetString(data, 0, receivedDataLength);
-            return line;
+            return Encoding.ASCII.GetString(data, 0, receivedDataLength);
         }
 
-        const int BufferSize = 16 * 1024;
-        [ThreadStatic] static byte[] readBuffer;
-
-        private byte[] Read(int count) 
+        private byte[] Read(int count)
         {
             byte[] buffer = new byte[count];
-            int aux = 0;
+            int totalReceived = 0;
 
-            while (aux < count)
+            while (totalReceived < count)
             {
-                aux = Soket.Receive(buffer, aux, count, socketFlags: SocketFlags.None);
+                int received = Soket.Receive(buffer, totalReceived, count - totalReceived, SocketFlags.None);
+                if (received == 0)
+                    throw new SocketException(); // conexão encerrada pelo instrumento
+                totalReceived += received;
             }
-            
 
             return buffer;
         }
 
         private string ReadString(int count)
         {
-            return System.Text.Encoding.ASCII.GetString(Read(count));
+            return Encoding.ASCII.GetString(Read(count));
         }
 
         public byte[] ReadBytes()
         {
-            int dataSize;
-            int dataSizeLen;
-            byte[] dataBytes;
-
             var buff = Read(1);
 
             if (buff[0] != (byte)'#')
-            {
-                throw new Exception("The Binary Block could not be parsed.");
-            }
+                throw new Exception("O bloco binário não pôde ser interpretado.");
 
-            var digits = ReadString(1);
-            dataSizeLen = int.Parse(digits);
+            int dataSizeLen = int.Parse(ReadString(1));
+            int dataSize    = int.Parse(ReadString(dataSizeLen));
 
-            var length = ReadString(dataSizeLen);
-            dataSize = int.Parse(length);
-
-            dataBytes = Read(dataSize);
-
-
-            return dataBytes;
+            return Read(dataSize);
         }
 
         Socket soket = null;
@@ -105,13 +91,9 @@ namespace ConnectLan
                 if (soket == null)
                 {
                     soket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-                    if (!soket.Connected)
-                    {
-                        soket.Connect(Ip);
-                        soket.SendTimeout = TimeOut;
-                        soket.ReceiveTimeout = TimeOut;
-                    }
+                    soket.Connect(Ip);
+                    soket.SendTimeout    = TimeOut;
+                    soket.ReceiveTimeout = TimeOut;
                 }
                 return soket;
             }
