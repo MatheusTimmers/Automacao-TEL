@@ -1,25 +1,18 @@
-﻿using System;
-using AutomaçãoTEL;
+using System;
+using System.Net.Sockets;
+using MainSpecAn.Session;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using MainSpecAn;
-using Windows.UI;
 using Windows.UI.Xaml.Media;
-using System.Net.Sockets;
 using Windows.UI.Xaml.Navigation;
-using System.IO;
-
-
-// O modelo de item de Página em Branco está documentado em https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace AutomaçãoTEL.Views
 {
-    /// <summary>
-    /// Uma página vazia que pode ser usada isoladamente ou navegada dentro de um Quadro.
-    /// </summary>
     public sealed partial class Home : Page
     {
-        MainAssay mainAssay {get;set;}
+        private TestSession _session;
+
         public Home()
         {
             this.InitializeComponent();
@@ -27,104 +20,83 @@ namespace AutomaçãoTEL.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (!(e.Parameter as MainAssay).Equals(null))
+            if (e.Parameter is not TestSession session)
             {
-                mainAssay = e.Parameter as MainAssay;
-                if (mainAssay.IsConnect == true)
-                {
-                    TboxIpConfig.Text = mainAssay.Ip;
-                    TbConnect.Text = "Conectado";
-                    TbConnect.Foreground = new SolidColorBrush(Colors.Green);
-                }
-                else
-                {
-                    TboxIpConfig.Text = mainAssay.Ip;
-                    TbConnect.Text = "Não Conectado";
-                    TbConnect.Foreground = new SolidColorBrush(Colors.Red);
-                }
-                if (mainAssay.Folder != null)
-                {
-                    LFolder.Text = mainAssay.Folder.Name;
-                }
-                else
-                {
-                    LFolder.Text = "Selecione a Pasta";
-                }
-                if (mainAssay.Alias != null)
-                {
-                    TboxAlias.Text = mainAssay.Alias;
-                }
-                else
-                {
-                    TboxAlias.Text = "";
-                }
+                throw new InvalidOperationException("Home requer TestSession como parâmetro de navegação.");
+            }
 
+            _session = session;
+
+            TboxIpConfig.Text = _session.Ip;
+
+            if (_session.IsConnected)
+            {
+                TbConnect.Text       = "Conectado";
+                TbConnect.Foreground = new SolidColorBrush(Colors.Green);
             }
             else
             {
-                throw new Exception();
+                TbConnect.Text       = "Não Conectado";
+                TbConnect.Foreground = new SolidColorBrush(Colors.Red);
             }
+
+            LFolder.Text   = _session.OutputFolder != null
+                ? _session.OutputFolder.Name
+                : "Selecione a Pasta";
+
+            TboxAlias.Text = _session.Alias ?? "";
+
             base.OnNavigatedTo(e);
         }
 
         private void BtIpConnect_Click(object sender, RoutedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(TboxIpConfig.Text))
+                return;
+
             try
             {
-                if (TboxIpConfig.Text != "")
-                {
-                    
-                    ProgRIpConnect.IsActive = true;
-                    var aux = mainAssay.ConnectLan(TboxIpConfig.Text);
-                    if (aux == "Ok")
-                    {
-                        TbConnect.Text = "Conectado";
-                        TbConnect.Foreground = new SolidColorBrush(Colors.Green);
-                    }
-                }
+                ProgRIpConnect.IsActive = true;
+                _session.Connect(TboxIpConfig.Text);
+
+                TbConnect.Text       = "Conectado";
+                TbConnect.Foreground = new SolidColorBrush(Colors.Green);
             }
-            catch(SocketException es)
+            catch (SocketException ex)
             {
-                if (es.NativeErrorCode.Equals(10051))
-                {
-                    TbConnect.Text = $"Erro - A rede é inacessível";
-                    TbConnect.Foreground = new SolidColorBrush(Colors.Red);
-                }
-                else
-                {
-                    TbConnect.Text = $"Erro - {es.NativeErrorCode}";
-                    TbConnect.Foreground = new SolidColorBrush(Colors.Red);
-                }
+                string msg = ex.NativeErrorCode == 10051
+                    ? "Erro — A rede é inacessível"
+                    : $"Erro — {ex.NativeErrorCode}";
+
+                TbConnect.Text       = msg;
+                TbConnect.Foreground = new SolidColorBrush(Colors.Red);
+            }
+            catch (Exception ex)
+            {
+                TbConnect.Text       = $"Erro — {ex.Message}";
+                TbConnect.Foreground = new SolidColorBrush(Colors.Red);
             }
             finally
             {
                 ProgRIpConnect.IsActive = false;
             }
-                
-  
         }
 
         private async void BtSaveFolder_Click(object sender, RoutedEventArgs e)
         {
             var picker = new Windows.Storage.Pickers.FolderPicker();
             picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
-            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+            picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
 
-            mainAssay.Folder = await picker.PickSingleFolderAsync();
-            if (mainAssay.Folder != null)
-            {
-                // Application now has read/write access to the picked file
-                this.LFolder.Text = "Pasta: " + mainAssay.Folder.Name;
-            }
-            else
-            {
-                this.LFolder.Text = "Erro, pasta inválida";
-            }
+            _session.OutputFolder = await picker.PickSingleFolderAsync();
+            LFolder.Text = _session.OutputFolder != null
+                ? "Pasta: " + _session.OutputFolder.Name
+                : "Erro, pasta inválida";
         }
 
         private void TboxAlias_TextChanged(object sender, TextChangedEventArgs e)
         {
-            mainAssay.Alias = TboxAlias.Text;
+            _session.Alias = TboxAlias.Text;
         }
     }
 }

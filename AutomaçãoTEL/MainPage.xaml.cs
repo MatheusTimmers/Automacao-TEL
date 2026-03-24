@@ -1,7 +1,7 @@
-﻿    using MainSpecAn;
+using MainSpecAn;
+using MainSpecAn.Session;
 using System;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using Windows.Foundation;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -11,32 +11,25 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using muxc = Microsoft.UI.Xaml.Controls;
 
-// O modelo de item de Página em Branco está documentado em https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x416
-
 namespace AutomaçãoTEL
 {
-    /// <summary>
-    /// Uma página vazia que pode ser usada isoladamente ou navegada dentro de um Quadro.
-    /// </summary>
-    
     public sealed partial class MainPage : Page
     {
-        MainAssay mainAssay = new MainAssay();
+        // TestSession carrega o estado de sessão (IP, instrumento, pasta, alias)
+        // e é passado como parâmetro de navegação para todas as páginas.
+        private readonly TestSession _session = new TestSession();
 
         public MainPage()
         {
             this.InitializeComponent();
-            mainAssay.IsConnect = false;
-            mainAssay.Ip = "";
 
             ApplicationView.PreferredLaunchViewSize = new Size(420, 650);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
 
-
         private void NavView_Loaded(object sender, RoutedEventArgs e)
         {
-            foreach(muxc.NavigationViewItemBase item in NavView.MenuItems)
+            foreach (muxc.NavigationViewItemBase item in NavView.MenuItems)
             {
                 if (item is muxc.NavigationViewItem && item.Tag.ToString() == "Home")
                 {
@@ -44,14 +37,8 @@ namespace AutomaçãoTEL
                     break;
                 }
             }
-            ContentFrame.Navigate(typeof(Views.Home), mainAssay, new EntranceNavigationTransitionInfo());
+            ContentFrame.Navigate(typeof(Views.Home), _session, new EntranceNavigationTransitionInfo());
         }
-
-        public void ActivateBackButton()
-        {
-            NavView.IsBackEnabled = true;
-        }
-
 
         private void NavView_BackRequested(muxc.NavigationView sender, muxc.NavigationViewBackRequestedEventArgs args)
         {
@@ -73,57 +60,38 @@ namespace AutomaçãoTEL
             return true;
         }
 
-
         public bool NavigateToView(string clickedView)
         {
-            var view = Assembly.GetExecutingAssembly().GetType($"AutomaçãoTEL.Views.{clickedView}");
-
-
+            var view = Assembly.GetExecutingAssembly()
+                .GetType($"AutomaçãoTEL.Views.{clickedView}");
 
             if (string.IsNullOrWhiteSpace(clickedView) || view == null)
                 return false;
 
-            
-            if(clickedView == "Login")
-            {
-                ContentFrame.Navigate(view, NavView, new EntranceNavigationTransitionInfo());
-                return true;
-            }
-            else
-            {
-                ContentFrame.Navigate(view, mainAssay, new EntranceNavigationTransitionInfo());
-                return true;
-            }
- 
+            object parameter = clickedView == "Login" ? (object)NavView : _session;
+            ContentFrame.Navigate(view, parameter, new EntranceNavigationTransitionInfo());
+            return true;
         }
 
         private void NavView_ItemInvoked(muxc.NavigationView sender, muxc.NavigationViewItemInvokedEventArgs args)
         {
             var item = args.InvokedItemContainer as muxc.NavigationViewItem;
-            if (item == null)
-                return;
-            if (args.IsSettingsInvoked == true)
-            {
+            if (item == null) return;
+
+            if (args.IsSettingsInvoked)
                 NavigateToView("Config");
-            }
             else
-            {
-                var clickedView = item.Tag.ToString();
-                if (!NavigateToView(clickedView)) return;
-            }
-            
+                NavigateToView(item.Tag.ToString());
         }
 
         private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
-            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
+            throw new Exception("Falha ao carregar página: " + e.SourcePageType.FullName);
         }
 
         private void AccountBt_Tapped(object sender, TappedRoutedEventArgs e)
         {
             NavigateToView("Login");
         }
-
     }
-
 }

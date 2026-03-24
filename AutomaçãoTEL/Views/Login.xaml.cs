@@ -1,113 +1,76 @@
-﻿using System;
+using System;
+using AutomaçãoTEL.UserFolder;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using AutomaçãoTEL.UserFolder;
-using Windows.UI.Xaml.Media.Imaging;
-using Windows.UI.Core;
 using Windows.UI.Xaml.Navigation;
 using muxc = Microsoft.UI.Xaml.Controls;
 
 namespace AutomaçãoTEL.Views
 {
-    /// <summary>
-    /// Uma página vazia que pode ser usada isoladamente ou navegada dentro de um Quadro.
-    /// </summary>
     public sealed partial class Login : Page
     {
-        public muxc.NavigationView NavView { get; private set; }
+        private muxc.NavigationView _navView;
+
         public Login()
         {
             this.InitializeComponent();
         }
 
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            _navView = e.Parameter as muxc.NavigationView;
+            base.OnNavigatedTo(e);
+        }
+
         private void BtRegister_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(RegistrationAccount));
-            NavView.IsBackEnabled = true;
+            if (_navView != null)
+                _navView.IsBackEnabled = true;
         }
 
         private void ContentFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
-            throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
+            throw new Exception("Falha ao carregar página: " + e.SourcePageType.FullName);
         }
 
         private async void BtLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (TboxName.Text == "" || TboxPassword.Password == "")
+            if (string.IsNullOrWhiteSpace(TboxName.Text) || TboxPassword.Password == "")
             {
-                DisplayInvalidNameOrPassword();
+                await ShowDialogAsync("Nome ou senha inválidos",
+                    "Verifique o nome ou a senha e tente novamente.");
                 return;
             }
+
             try
             {
-                User user = new User(TboxName.Text, TboxPassword.Password);
+                var user = new User(TboxName.Text, TboxPassword.Password);
                 if (!user.Login())
                 {
-                    DisplayInvalidNameOrPassword();
+                    await ShowDialogAsync("Nome ou senha inválidos",
+                        "Verifique o nome ou a senha e tente novamente.");
                     return;
                 }
-                LoginPerformed();
 
-
-                SoftwareBitmapSource BitmapSource = new SoftwareBitmapSource();
-                //await BitmapSource.SetBitmapAsync(await user.LoadImageAsync());
+                await ShowDialogAsync("Login Efetuado", "");
                 personPicture.ProfilePicture = await user.LoadImageAsync();
             }
-            catch (Exception a)
+            catch (Exception ex)
             {
-                DisplayErro(a);
-            }  
-        }
-
-        #region DisplayErros
-        private async void DisplayInvalidNameOrPassword()
-        {
-            ContentDialog noWifiDialog = new ContentDialog
-            {
-                Title = "Nome ou senha inválidos",
-                Content = "Verifique o nome ou a senha e tente novamente",
-                CloseButtonText = "Ok"
-            };
-            _ = await noWifiDialog.ShowAsync();
-        }
-
-
-        private async void DisplayErro(Exception a)
-        {
-            ContentDialog Erro = new ContentDialog
-            {
-                Title = "Deu ERRO",
-                Content = "Tente Novamente - Mensagem de erro:" + a.Message.ToString(),
-                CloseButtonText = "Ok"
-            };
-            _ = await Erro.ShowAsync();
-        }
-
-
-        private async void LoginPerformed()
-        {
-            ContentDialog noWifiDialog = new ContentDialog
-            {
-                Title = "Login Efetuado",
-                CloseButtonText = "Ok"
-            };
-            _ = await noWifiDialog.ShowAsync();
-        }
-        #endregion
-
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            if (e.Parameter is muxc.NavigationView)
-            {
-                NavView = e.Parameter as muxc.NavigationView;
+                await ShowDialogAsync("Erro", "Tente Novamente — " + ex.Message);
             }
-            else
-            {
-                return;
-            }
-            base.OnNavigatedTo(e);
         }
 
+        private async System.Threading.Tasks.Task ShowDialogAsync(string title, string content)
+        {
+            var dialog = new ContentDialog
+            {
+                Title           = title,
+                Content         = content,
+                CloseButtonText = "Ok"
+            };
+            await dialog.ShowAsync();
+        }
     }
 }

@@ -1,37 +1,29 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using AutomaçãoTEL.ViewModel;
 using System.Threading.Tasks;
+using AutomaçãoTEL.ViewModel;
+using MainSpecAn;
+using MainSpecAn.Session;
 using Windows.Storage;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
-using MainSpecAn;
 using Windows.UI.Xaml.Navigation;
-using Windows.UI;
-using System.Drawing;
-using Windows.UI.Core;
-using Windows.Foundation;
-
-// O modelo de item de Página em Branco está documentado em https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace AutomaçãoTEL.Views
 {
-    /// <summary>
-    /// Uma página vazia que pode ser usada isoladamente ou navegada dentro de um Quadro.
-    /// </summary>
     public sealed partial class Wifi : Page
     {
         public StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;
         public WifiViewModel Controler { get; set; }
         public ConfigViewModel ControlerConfig { get; set; }
-        public IList<string> Cache { get; set; }
+
         public StorageFile CacheFileWifi { get; set; }
         public StorageFile CacheFileModu { get; set; }
-        MainAssay mainAssay { get; set; }
+
+        private TestSession _session;
+
         public Wifi()
         {
             this.InitializeComponent();
@@ -44,361 +36,250 @@ namespace AutomaçãoTEL.Views
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (!(e.Parameter as MainAssay).Equals(null))
+            if (e.Parameter is not TestSession session)
             {
-                mainAssay = e.Parameter as MainAssay;
-                if (mainAssay.IsConnect == true)
-                {
-                    LIp.Text = "Analisador de Espectro Conectado";
-                }
-                else
-                {
-                    LIp.Text = "Analisador de Espectro Desconectado";
-                }
+                throw new InvalidOperationException("Wifi requer TestSession como parâmetro de navegação.");
             }
-            else
-            {
-                throw new Exception();
-            }
+
+            _session = session;
+            LIp.Text = _session.IsConnected
+                ? $"Analisador de Espectro Conectado: {_session.Ip}"
+                : "Analisador de Espectro Desconectado";
+
             base.OnNavigatedTo(e);
         }
-
 
         async void CreateCache()
         {
             try
             {
                 CacheFileWifi = await temporaryFolder.CreateFileAsync("WifiCache.txt", CreationCollisionOption.ReplaceExisting);
-                CacheFileModu = await temporaryFolder.CreateFileAsync("ModuCache.txt", CreationCollisionOption.ReplaceExisting);
+                CacheFileModu = await temporaryFolder.CreateFileAsync("ModuCache.txt",  CreationCollisionOption.ReplaceExisting);
             }
-            catch (Exception)
+            catch
             {
                 CacheFileWifi = await temporaryFolder.GetFileAsync("WifiCache.txt");
                 CacheFileModu = await temporaryFolder.GetFileAsync("ModuCache.txt");
             }
         }
 
+        // ── BtConfirme ─────────────────────────────────────────────────────────
 
-        #region DisplayErros
-
-        private async Task DisplayNoModulationsOrItems()
+        private async void BtConfirme_Click(object sender, RoutedEventArgs e)
         {
-            ContentDialog NoModulationsOrItems = new ContentDialog
+            if (_session == null || !_session.IsConnected)
             {
-                Title = "Aviso",
-                Content = "Nenhuma modulação ou item foi selecionado",
-                CloseButtonText = "Ok"
-            };
-            _ = await NoModulationsOrItems.ShowAsync();
+                await ShowDialogAsync("Não conectado", "Conecte ao instrumento na tela inicial.");
+                return;
+            }
+            if (_session.OutputFolder == null)
+            {
+                await ShowDialogAsync("Pasta não selecionada", "Selecione a pasta de saída na tela inicial.");
+                return;
+            }
+
+            try
+            {
+                await SaveCache(!TsItems.IsOn);
+
+                List<string> listAssay = await ListAssay();
+                List<string> listMod   = await ListModu();
+
+                if (listAssay.Count == 0 || listMod.Count == 0)
+                {
+                    await ShowDialogAsync("Aviso", "Nenhuma modulação ou ensaio selecionado.");
+                    return;
+                }
+
+                DisplayInitAssay(listAssay.Count * listMod.Count);
+
+                var runner = new AssayRunner(_session);
+                await RunAssaysAsync(runner, listAssay, listMod);
+
+                EndAssay();
+            }
+            catch (Exception ex)
+            {
+                EndAssay();
+                await ShowDialogAsync("Erro durante ensaio", ex.Message);
+            }
         }
 
-        private async Task DisplayWaitUser(string name, string action)
+        private async Task RunAssaysAsync(AssayRunner runner, List<string> listAssay, List<string> listMod)
         {
-            ContentDialog WaitUser = new ContentDialog
+            for (int i = 0; i < listMod.Count; i++)
             {
-                Title = "Aviso",
-                Content = $"Iniciando ensaio de {name}, {action}",
-                CloseButtonText = "Ok"
-            };
-            _ = await WaitUser.ShowAsync();
+                string modu = listMod[i];
+                string bw   = GetBandwidthForModulation(modu);
+                ControlerConfig.Configs.WifiConfigs.Bw = "Largura de " + bw;
+
+                for (int j = 0; j < listAssay.Count; j++)
+                {
+                    string assay = listAssay[j];
+
+                    if (ControlerConfig.Configs.IsCheckedFreqI)
+                        await runner.RunWifiAssayAsync("usuario", modu,
+                            ControlerConfig.Configs.WifiConfigs.FreqIWifi,
+                            assay, bw,
+                            ControlerConfig.Configs.RefLevel,
+                            ControlerConfig.Configs.Att,
+                            ControlerConfig.Configs.IsCheckedPrintI);
+
+                    if (ControlerConfig.Configs.IsCheckedFreqC)
+                        await runner.RunWifiAssayAsync("usuario", modu,
+                            ControlerConfig.Configs.WifiConfigs.FreqCWifi,
+                            assay, bw,
+                            ControlerConfig.Configs.RefLevel,
+                            ControlerConfig.Configs.Att,
+                            ControlerConfig.Configs.IsCheckedPrintC);
+
+                    if (ControlerConfig.Configs.IsCheckedFreqF)
+                        await runner.RunWifiAssayAsync("usuario", modu,
+                            ControlerConfig.Configs.WifiConfigs.FreqFWifi,
+                            assay, bw,
+                            ControlerConfig.Configs.RefLevel,
+                            ControlerConfig.Configs.Att,
+                            ControlerConfig.Configs.IsCheckedPrintF);
+
+                    await UpdateLoadingAsync();
+                }
+            }
         }
+
+        /// <summary>Retorna a largura de banda em MHz para a modulação selecionada.</summary>
+        private static string GetBandwidthForModulation(string modu) => modu switch
+        {
+            "802.11a" or "802.11b" or "802.11g"
+            or "802.11n (20)" or "802.11ac (20)" or "802.11ax (20)"
+            or "Bluetooth Low Energy" => "20",
+
+            "802.11n (40)" or "802.11ac (40)" or "802.11ax (40)" => "40",
+            "802.11n (80)" or "802.11ac (80)" or "802.11ax (80)" => "80",
+            "802.11ax (160)"                                      => "160",
+            _ => "20"
+        };
+
+        // ── UI helpers ─────────────────────────────────────────────────────────
 
         private void DisplayInitAssay(int count)
         {
-
-            PbLoading.Value = 0;
-            TbAssayFinish.Text = $"Ensaios concluidos: {PbLoading.Value}/{count}";
+            PbLoading.Value    = 0;
+            PbLoading.Maximum  = count;
+            TbAssayFinish.Text = $"Ensaios concluídos: 0/{count}";
             PanelLoading.Visibility = Visibility.Visible;
-            PbLoading.Maximum = count;
         }
-
 
         private void EndAssay()
         {
             PanelLoading.Visibility = Visibility.Collapsed;
         }
 
-
-        private async Task AttLoading()
+        private async Task UpdateLoadingAsync()
         {
             await Window.Current.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 PbLoading.Value++;
-                TbAssayFinish.Text = $"Ensaios concluidos: {PbLoading.Value}/{PbLoading.Maximum}";
+                TbAssayFinish.Text = $"Ensaios concluídos: {(int)PbLoading.Value}/{(int)PbLoading.Maximum}";
             });
         }
 
-
-        #endregion
-
-        private async void BtConfirme_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                await SaveCache(!TsItems.IsOn);
-                DisplayInitAssay((await ListAssay()).Count * (await ListModu()).Count);
-                await InitAssay();
-                EndAssay();
-            }
-            catch(Exception)
-            {
-            }
-        }
-
-        private async Task InitAssay()
-        {
-            List<string> listAssay = await ListAssay();
-            List<string> listMod = await ListModu();
-            for (int i = 0; i < listMod.Count; i++)
-            {
-                for (int j = 0; j < listAssay.Count; j++)
-                {
-                    if (listAssay[j] == "Emissão fora de faixa")
-                    {
-                        if (ControlerConfig.Configs.IsCheckedFreqI)
-                        {
-                            await DisplayWaitUser("Emissão fora de faixa", "Selecione a frequência inicial");
-                        }
-                        if (ControlerConfig.Configs.IsCheckedFreqF)
-                        {
-                            await DisplayWaitUser("Emissão fora de faixa", "Selecione a frequência final");
-                        }
-                    }
-                    if (listMod[i] == "802.11a" || listMod[i] == "802.11b" || listMod[i] == "802.11g" || listMod[i] == "802.11n (20)" || listMod[i] == "802.11ac (20)" || listMod[i] == "802.11ax (20)")
-                    {
-                        ControlerConfig.Configs.WifiConfigs.Bw = "Largura de 20";
-                        if (ControlerConfig.Configs.IsCheckedFreqI)
-                        {
-                            await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqIWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintI);
-                        }
-                        if (ControlerConfig.Configs.IsCheckedFreqC)
-                        {
-                            await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqCWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintC);
-                        }
-                        if (ControlerConfig.Configs.IsCheckedFreqF)
-                        {
-                            await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqFWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintF);
-                        }
-                    }
-                    else
-                    {
-                        if (listMod[i] == "802.11n (40)" || listMod[i] == "802.11ac (40)" || listMod[i] == "802.11ax (40)")
-                        {
-                            ControlerConfig.Configs.WifiConfigs.Bw = "Largura de 40";
-                            if (ControlerConfig.Configs.IsCheckedFreqI)
-                            {
-                                await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqIWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintI);
-                            }
-                            if (ControlerConfig.Configs.IsCheckedFreqC)
-                            {
-                                await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqCWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintC);
-                            }
-                            if (ControlerConfig.Configs.IsCheckedFreqF)
-                            {
-                                await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqFWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintF);
-                            }
-                        }
-                        else
-                        {
-                            ControlerConfig.Configs.WifiConfigs.Bw = "Largura de 80";
-                            if (listMod[i] == "802.11n (80)" || listMod[i] == "802.11ac (80)" || listMod[i] == "802.11ax (80)")
-                            {
-                                if (ControlerConfig.Configs.IsCheckedFreqI)
-                                {
-                                    await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqIWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintI);
-                                }
-                                if (ControlerConfig.Configs.IsCheckedFreqC)
-                                {
-                                    await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqCWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintC);
-                                }
-                                if (ControlerConfig.Configs.IsCheckedFreqF)
-                                {
-                                    await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqFWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintF);
-                                }
-                            }
-                            else
-                            {
-                                if (listMod[i] == "802.11ax (160)")
-                                {
-                                    ControlerConfig.Configs.WifiConfigs.Bw = "Largura de 160";
-                                    if (ControlerConfig.Configs.IsCheckedFreqI)
-                                    {
-                                        await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqIWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintI);
-                                    }
-                                    if (ControlerConfig.Configs.IsCheckedFreqC)
-                                    {
-                                        await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqCWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintC);
-                                    }
-                                    if (ControlerConfig.Configs.IsCheckedFreqF)
-                                    {
-                                        await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqFWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintF);
-                                    }
-                                }
-                                else
-                                {
-                                    if (listMod[i] == "Bluetooth Low Energy")
-                                    {
-                                        if (ControlerConfig.Configs.IsCheckedFreqI)
-                                        {
-                                            await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqIWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintI);
-                                        }
-                                        if (ControlerConfig.Configs.IsCheckedFreqC)
-                                        {
-                                            await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqCWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintC);
-                                        }
-                                        if (ControlerConfig.Configs.IsCheckedFreqF)
-                                        {
-                                            await mainAssay.AssayWifi("Matheus", listMod[i], ControlerConfig.Configs.WifiConfigs.FreqFWifi, "Keysight", listAssay[j], ControlerConfig.Configs.WifiConfigs.Bw, ControlerConfig.Configs.RefLevel, ControlerConfig.Configs.Att, ControlerConfig.Configs.IsCheckedPrintF);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    await AttLoading();
-                }
-            }
-        }
-
-        private async void LoadCache()
-        {
-            try
-            {
-                int cont = 0;
-                if (!TsItems.IsOn)
-                {
-                    foreach (Item item in this.Controler.Itens)
-                    {
-                        IList<string> aux = await FileIO.ReadLinesAsync(CacheFileModu);
-                        string a = aux[cont];
-                        item.IsChecked = a == "True";
-                        cont++;
-                    }
-                }
-                else
-                {
-                    foreach (Item item in this.Controler.Itens)
-                    {
-                        IList<string> aux = await FileIO.ReadLinesAsync(CacheFileWifi);
-                        string a = aux[cont];
-                        item.IsChecked = a == "True";
-                        cont++;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-
-        }
-
-
-        private async Task SaveCache(bool state)
-        {
-            if (state)
-            {
-                await FileIO.WriteTextAsync(CacheFileModu, "");
-                foreach (Item item in Controler.Itens)
-                {
-                    await FileIO.AppendTextAsync(CacheFileModu, item.IsChecked.ToString() + "\n");
-                }
-            }
-            else
-            {
-                await FileIO.WriteTextAsync(CacheFileWifi, "");
-                foreach (Item item in Controler.Itens)
-                {
-                    await FileIO.AppendTextAsync(CacheFileWifi, item.IsChecked.ToString() + "\n");
-                }
-            }
-            this.Controler.TsItemsIsOn = TsItems.IsOn;
-            this.Controler.AttList();
-            LoadCache();
-        }
+        // ── Cache ──────────────────────────────────────────────────────────────
 
         private async void TsItems_Toggled(object sender, RoutedEventArgs e)
         {
             await SaveCache(TsItems.IsOn);
         }
 
+        private async void LoadCache()
+        {
+            try
+            {
+                var file = TsItems.IsOn ? CacheFileWifi : CacheFileModu;
+                if (file == null) return;
+
+                int cont = 0;
+                foreach (Item item in this.Controler.Itens)
+                {
+                    IList<string> aux = await FileIO.ReadLinesAsync(file);
+                    if (cont < aux.Count)
+                        item.IsChecked = aux[cont] == "True";
+                    cont++;
+                }
+            }
+            catch { /* cache inválido, ignora */ }
+        }
+
+        private async Task SaveCache(bool savingAssays)
+        {
+            StorageFile target = savingAssays ? CacheFileWifi : CacheFileModu;
+            if (target != null)
+            {
+                await FileIO.WriteTextAsync(target, "");
+                foreach (Item item in Controler.Itens)
+                    await FileIO.AppendTextAsync(target, item.IsChecked + "\n");
+            }
+            this.Controler.TsItemsIsOn = TsItems.IsOn;
+            this.Controler.AttList();
+            LoadCache();
+        }
+
         public async Task<List<string>> ListAssay()
         {
-            int cont = 0;
-            List<string> list = new List<string>();
-            for (int i = 0; i < Controler.namesAssayWifi.Count; i++)
+            var list = new List<string>();
+            if (CacheFileWifi == null) return list;
+            IList<string> lines = await FileIO.ReadLinesAsync(CacheFileWifi);
+            for (int i = 0; i < Controler.namesAssayWifi.Count && i < lines.Count; i++)
             {
-                IList<string> aux = await FileIO.ReadLinesAsync(CacheFileWifi);
-                if(aux[cont] == "True")
-                {
+                if (lines[i] == "True" && Controler.namesAssayWifi[i] != "Selecionar Todos")
                     list.Add(Controler.namesAssayWifi[i]);
-                }
-                cont++;
             }
             return list;
         }
 
         public async Task<List<string>> ListModu()
         {
-            int cont = 0;
-            List<string> list = new List<string>();
-            for (int i = 0; i < Controler.namesModulations.Count; i++)
+            var list = new List<string>();
+            if (CacheFileModu == null) return list;
+            IList<string> lines = await FileIO.ReadLinesAsync(CacheFileModu);
+            for (int i = 0; i < Controler.namesModulations.Count && i < lines.Count; i++)
             {
-                IList<string> aux = await FileIO.ReadLinesAsync(CacheFileModu);
-                string a = aux[cont];
-                if (a == "True")
-                {
+                if (lines[i] == "True" && Controler.namesModulations[i] != "Selecionar Todos")
                     list.Add(Controler.namesModulations[i]);
-                }
-                cont++;
             }
             return list;
         }
 
+        // ── CheckBox handlers ──────────────────────────────────────────────────
 
         private void Item_Checked(object sender, RoutedEventArgs e)
         {
-            if ((sender as CheckBox).Content.ToString() == "Selecionar Todos")
+            if ((sender as CheckBox)?.Content?.ToString() == "Selecionar Todos")
             {
                 foreach (Item item in Controler.Itens)
-                {
-                    if(item.IsChecked)
-                    {
-
-                    }
-                }
+                    item.IsChecked = true;
             }
-            /*
-            else
-            {
-                if (Controler.Itens[0].IsChecked == true)
-                {
-                    Controler.Itens[0].IsChecked = false;
-                }
-            }
-            */
         }
 
         private void Item_Unchecked(object sender, RoutedEventArgs e)
         {
-            if ((sender as CheckBox).Content.ToString() == "Selecionar Todos")
+            if ((sender as CheckBox)?.Content?.ToString() == "Selecionar Todos")
             {
                 foreach (Item item in Controler.Itens)
-                {
                     item.IsChecked = false;
-                }
             }
-            /*
-            else
+        }
+
+        // ── Diálogos ──────────────────────────────────────────────────────────
+
+        private async Task ShowDialogAsync(string title, string content)
+        {
+            var dialog = new ContentDialog
             {
-                if (Controler.Itens[0].IsChecked == true)
-                {
-                    Controler.Itens[0].IsChecked = false;
-                }
-            }
-            */
+                Title           = title,
+                Content         = content,
+                CloseButtonText = "Ok"
+            };
+            await dialog.ShowAsync();
         }
     }
-    
-
 }
