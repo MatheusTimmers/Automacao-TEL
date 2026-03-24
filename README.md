@@ -1,42 +1,106 @@
-<h1 align="center"> Automacao Ensaios TEL </h1>
+<h1 align="center">Automação Ensaios TEL</h1>
+
 <p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=PAUSADO&color=yellow&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=STATUS&message=EM+DESENVOLVIMENTO&color=blue&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=PLATAFORMA&message=Windows+UWP&color=informational&style=for-the-badge"/>
+  <img src="http://img.shields.io/static/v1?label=LINGUAGEM&message=C%23&color=purple&style=for-the-badge"/>
 </p>
 
-## ❓ Sobre o Projeto
+## Sobre o Projeto
 
-Projeto iniciado no meu tempo livre no meu trabalho no LABELO na área de telecomunicações, devido a uma série de melhorias e erros a serem corrigidos da minha primeira automação para os ensaios de WIFI e Bluetooth e
-uma necessidade de uma interface que englobasse mais ensaios, além dos de Wifi e bluetooth desenvolvidos no diretório Automacao-Ensaios-WIFI-Bluetooth, assim tendo mais
-facilidade na hora de implementar novos ensaios e correções no codigo.
+Software desenvolvido no LABELO para automatizar ensaios de certificação de dispositivos de telecomunicações, conforme a **Norma 14448 da Anatel** (itens 10, 15 e 20).
 
-- Programa solicita valores e prints da tela de um analisador de espectro, de acordo com o item 10, 15, 20 da Norma 14448 da Anatel, salva esses valores em um banco de dados
-mantendo um registros de quem realizou o ensaio e dos valores de cada um deles, além de gerar um relatório no excel já configurado para enviar para o cliente
-(https://informacoes.anatel.gov.br/legislacao/atos-de-certificacao-de-produtos/2017/1139-ato-14448)
+O sistema se comunica com analisadores de espectro via TCP/SCPI, executa as sequências de medição automaticamente, salva os resultados em banco de dados Firebird e exporta os dados em CSV por ensaio.
 
-## 🛠️ Equipamentos
+## Arquitetura
 
-Automação feita para os modelos de analizadores de espectro, N9010A da Keysight e para o ESR da Rohde e Schwarz
+O projeto é dividido em quatro bibliotecas com responsabilidades bem definidas:
 
-## 💻 Como Utilizar
+```
+AutomaçãoTEL/          → Interface UWP (XAML + code-behind)
+├── Views/             → Páginas: Home, Wifi, Bluetooth, Config, Login
+└── ViewModel/         → BTViewModel, WifiViewModel, ConfigViewModel
 
-Para o funcionamento do programa sera necessário:
+MainSpecAn/            → Lógica de negócio
+├── Interfaces/        → ISpectrumAnalyzer, MeasurementConfig
+├── Session/           → TestSession, SpectrumAnalyzerFactory
+├── Assays/            → Uma classe por ensaio (sem acoplamento ao instrumento)
+└── AssayRunner        → Orquestrador: recebe a sessão, executa e persiste
 
-- Uma conexão LAN com um Analisador de Espectro;
+ConnectLan/            → Comunicação TCP/SCPI (socket raw)
+DataBaseClass/         → Acesso ao banco de dados Firebird
+```
 
-- Um Software da sua escolha para descobrir o IP do Analisador de espectro
-(Recomendo: https://www.ni.com/pt-br/support/downloads/drivers/download.ni-visa.html#442805)
+**Para adicionar suporte a um novo instrumento** (ex: ESR da Rohde & Schwarz):
+1. Criar `MainSpecAn/SpecAn/ESR.cs` implementando `ISpectrumAnalyzer`
+2. Registrar o novo case em `SpectrumAnalyzerFactory.cs`
 
-- Escolher um ensaio disponivel na tela de navegação;
-      (Atualmente disponivel apenas os ensaios de WIFI e Bluetooth, mais tarde quando o software estiver mais consolidado, será adicionado os ensaios de Estabilizadores e de Radios)
-- Escolher a modulação solicitada do ensaio desejado;
-- Selecionar as frequências de ensaio;
-- Selecionar os Items solicitados na norma;
-- Confirmar.
+Nenhuma outra parte do código precisa ser alterada.
 
-## ✨Melhorias e Erros resolvidos - Implementadas e planejadas
+## Instrumentos Suportados
 
-- Interface Global (Para futuramente ser adicionado mais ensaios, tudo em um mesmo programa);
-- Melhoria no design da tela. Utilizando um projeto UWP a linguagem XAML;
-- Integração com Banco de Dados para salvar os ensaios de maneira mais organizada e segura
-- Criação de logica de Usuário para salvar o funcionario que realizou o ensaio.
-- Erros na logicas de ensaio corrigidos
+| Fabricante | Modelo | Status |
+|---|---|---|
+| Keysight | N9010A EXA | Implementado |
+| Rohde & Schwarz | ESR | Planejado |
+
+## Ensaios Disponíveis
+
+### WiFi (802.11 a/b/g/n/ac/ax e BLE)
+
+| Ensaio | Norma |
+|---|---|
+| Occupied Bandwidth at -6 dB | 14448 item 10 |
+| Occupied Bandwidth at -26 dB | 14448 item 10 |
+| Maximum Peak Power | 14448 item 15 |
+| Average Maximum Output Power | 14448 item 15 |
+| Peak Power Spectral Density | 14448 item 20 |
+| Average Power Spectral Density | 14448 item 20 |
+| Output Power | 14448 item 15 |
+| Power Spectral Density | 14448 item 20 |
+| Out-of-Band Emissions | Planejado |
+
+### Bluetooth (GFSK, PI/4 DQPSK, 8DPSK)
+
+| Ensaio | Norma |
+|---|---|
+| Occupied Bandwidth at -20 dB | 14448 |
+| Maximum Peak Power | 14448 |
+| Peak Power Spectral Density | 14448 |
+| Number of Occupations | 14448 |
+| Occupation Time | 14448 |
+| Hopping Channel Separation | 14448 |
+| Out-of-Band Emissions | Planejado |
+
+## Requisitos
+
+- Windows 10 / 11 (UWP)
+- Conexão LAN com o analisador de espectro
+- Banco de dados Firebird (arquivo `.fdb` incluído em `entrypoint/BancoDeDados/`)
+- Para descobrir o IP do instrumento: [NI-VISA](https://www.ni.com/pt-br/support/downloads/drivers/download.ni-visa.html)
+
+## Como Usar
+
+1. **Conectar ao instrumento** — Na tela Home, insira o IP do analisador e clique em Conectar
+2. **Selecionar pasta de saída** — Escolha onde os arquivos CSV e imagens serão salvos
+3. **Configurar parâmetros** — Na tela Config, defina Reference Level, Atenuação e frequências por modulação
+4. **Executar ensaios** — Na tela Wifi ou Bluetooth:
+   - Selecione as modulações desejadas (toggle em "Modulações")
+   - Alterne para "Ensaios" e selecione os itens da norma
+   - Clique em **Confirmar** — o software executa tudo automaticamente
+
+Os resultados são salvos em:
+```
+<pasta_saída>/<alias>/<Wifi|Bluetooth>/<modulação>/<ensaio>.csv
+<pasta_saída>/<alias>/<Wifi|Bluetooth>/<modulação>/<freq> <ensaio>.png
+```
+
+## Melhorias Implementadas (refatoração atual)
+
+- Separação por camadas: interface `ISpectrumAnalyzer` desacopla instrumento dos ensaios
+- `TestSession` substitui estado global espalhado pela aplicação
+- Uma classe por ensaio — fácil adicionar, testar e modificar individualmente
+- `Thread.Sleep` substituído por `await Task.Delay` (não trava a UI)
+- Bugs críticos corrigidos: sintaxe, transação SQL, loop de recebimento TCP
+- SQL injection prevenido via whitelist de nomes de tabela
+- Nomes dos ensaios padronizados em inglês
